@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="row py-5" id="Payments">
+        <div class="container">
+            <div class="row text-center">
+                <h1>Selecciona tu nuevo  <span>Plan</span></h1>
+                <p>Descubre nuestras opciones de plan actualizadas y selecciona la mejor para ti. Desde opciones básicas hasta premium, tenemos lo que necesitas para seguir adelante. ¡Explora y actualiza tu plan hoy mismo!</p>
+                
+            </div>
+            <div class="row px-5 py-4" id="prices">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item" *ngFor="let group of chunkArray(planes, 3); let i = index"
+                      [class.active]="i === 0">
+                      <div class="row">
+                        <div class="col py-2" *ngFor="let plan of group">
+                            <div class="Name_Plan d-flex justify-content-between px-5 py-3">
+                                <h3 class="align-left">{{plan.name}}</h3>
+                                <i class="bi bi-building" style="font-size: 2rem; color: #2D3748;"></i>
+                            </div>
+                            <h2 class="price text-center py-5">{{plan.price}}</h2>
+                            <h4 class="duration px-4">{{plan.description}}</h4>
+                            <ul class="features py-3  px-5">
+                                <li>{{plan.feature1}}</li>
+                                <li>{{plan.feature2}}</li>
+                                <li>{{plan.feature3}}</li>
+                            </ul>
+                            <button class="btn" style="width: 100%;">Cambiar Plan</button>
+                        </div>   
+                    </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+            
+
+        </div>
+    </div>
+</body>
+
+</html>
