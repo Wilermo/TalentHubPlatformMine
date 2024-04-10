@@ -14,6 +14,9 @@ import { CompanyComponent } from './components/company/company.component';
 import { UsersComponent } from './components/users/users.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { ModulesComponent } from './components/modules/modules.component';
+import { GestionarCuentaComponent } from './components/gestionar-cuenta/gestionar-cuenta.component';
+import { CambiarMPComponent } from './components/cambiar-mp/cambiar-mp.component';
+import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ModulesComponent } from './components/modules/modules.component';
     CompanyComponent,
     UsersComponent,
     PaymentsComponent,
-    ModulesComponent
+    ModulesComponent,
+    GestionarCuentaComponent,
+    CambiarMPComponent,
+    CambiarPlanComponent
   ],
   imports: [
     BrowserModule,

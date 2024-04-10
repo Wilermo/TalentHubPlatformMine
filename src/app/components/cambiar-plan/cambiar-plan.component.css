@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+    background-image: url(src/assets/img_cambiarPlan.svg);
+    background-size: cover; 
+    background-position: center;
+    height: 100vh; 
+    width: 100%; 
+}
+h1 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    color: #E3E3E3;
+    font-size: 64px;
+}
+h1 span {
+    color: #33A69A;
+}
+p {
+    font-family: "poppins", sans-serif;
+    font-weight: regular;
+    color: #E3E3E3;
+    font-size: 30px;
+    padding-top: 2%;
+}
+h2{
+    font-family: "poppins", sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 50px;
+}
+h3{
+    font-family: "poppins", sans-serif;
+    font-weight: bold;
+    color: #2D3748;
+    font-size: 30px;
+}
+h4{
+    font-family: "poppins", sans-serif;
+    font-weight: regular;
+    color: #4A5568;
+    font-size: 15px;
+}
+h5 {
+    font-family: "poppins", sans-serif;
+    font-weight: regular;
+    color: #E3E3E3;
+    font-size: 16px;
+    padding-top: 2%;
+}
+h5 span{
+    font-weight:bold;
+}
+h6{
+    font-family: "poppins", sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+}
+ul li{
+    font-family: "poppins", sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+
+}
+.col{
+    background-color: white;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-left: 0 !important; /* Eliminamos el padding izquierdo */
+    padding-right: 0 !important; /* Eliminamos el padding derecho */
+    padding-bottom: 0 !important;
+}
+
+.align-left {
+    text-align: left !important;
+}
+.align-right {
+    text-align: right !important;
+}
+#prices {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.btn{
+    background-color: #EDF2F7;
+    width: 100%;
+    font-family: "poppins", sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+    border-radius: 0px;
+    height: 70px;
+}
+.btn:hover{
+    background-color: #388089;
+}
