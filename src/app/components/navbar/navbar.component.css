@@ -1,18 +1,24 @@
 body {
     font-family: 'DM Sans', sans-serif;
-    background-color: #EDF2F7; /* Color de fondo para el resto de la pantalla */
+    background-color: #EDF2F7;
+    /* Color de fondo para el resto de la pantalla */
 }
 
 /* Estilos para la barra de navegación lateral */
 .sidebar-sticky {
-    font-size: 1.3rem; /* Aumenta el tamaño de la fuente */
-    padding: 10px; /* Aumenta el padding para un mejor ajuste */
+    font-size: 1.3rem;
+    /* Aumenta el tamaño de la fuente */
+    padding: 10px;
+    /* Aumenta el padding para un mejor ajuste */
     position: fixed;
     top: 0;
     height: 100vh;
-    width: 350px; /* Ajusta el ancho del sidebar si es necesario */
-    background-color: #FFFFFF; /* Fondo de la barra de navegación */
-    z-index: 1050; /* Asegura que el sidebar esté sobre el contenido */
+    width: 350px;
+    /* Ajusta el ancho del sidebar si es necesario */
+    background-color: #FFFFFF;
+    /* Fondo de la barra de navegación */
+    z-index: 1100;
+    /* Asegura que el sidebar esté sobre el contenido */
 }
 
 /* Cambia el color del texto y el stroke al pasar el mouse */
@@ -24,13 +30,18 @@ body {
 }
 
 .logo img {
-    width: 300%; /* Aumenta según necesites; ajusta el porcentaje o usa una medida fija como px */
-    height: auto; /* Mantiene la proporción del logo */
+    width: 300%;
+    /* Aumenta según necesites; ajusta el porcentaje o usa una medida fija como px */
+    height: auto;
+    /* Mantiene la proporción del logo */
     margin-top: 20px;
     margin-bottom: 35px;
-    margin-left: 10px; /* Centra el logo si aumenta el tamaño */
-    margin-right: auto; /* Centra el logo si aumenta el tamaño */
-    display: block; /* Asegura que las margenes automáticas funcionen */
+    margin-left: 10px;
+    /* Centra el logo si aumenta el tamaño */
+    margin-right: auto;
+    /* Centra el logo si aumenta el tamaño */
+    display: block;
+    /* Asegura que las margenes automáticas funcionen */
 }
 
 .user-section {
@@ -45,7 +56,8 @@ body {
     margin-right: 10px;
 }
 
-.user-info h1, .user-info h2 {
+.user-info h1,
+.user-info h2 {
     margin-right: 20px;
 }
 
@@ -66,10 +78,14 @@ body {
 
 .dropdown-menu {
     display: none;
-    z-index: 1070; /* Asegura que el dropdown-menu esté sobre todos los demás paneles */
-    position: absolute; /* El posicionamiento absoluto respecto a su contenedor relativo */
-    width: 100%; /* O cualquier otra medida que necesites */
-    left: 0; /* Alineación con el lado izquierdo del contenedor */
+    z-index: 1070;
+    /* Asegura que el dropdown-menu esté sobre todos los demás paneles */
+    position: absolute;
+    /* El posicionamiento absoluto respecto a su contenedor relativo */
+    width: 100%;
+    /* O cualquier otra medida que necesites */
+    left: 0;
+    /* Alineación con el lado izquierdo del contenedor */
 }
 
 .dropdown-item {
@@ -86,13 +102,16 @@ body {
     display: flex;
     align-items: center;
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.5rem; /* Aumenta el tamaño del texto */
-    padding: 12px 15px; /* Aumenta el padding para más espacio alrededor del texto */
+    font-size: 1.5rem;
+    /* Aumenta el tamaño del texto */
+    padding: 12px 15px;
+    /* Aumenta el padding para más espacio alrededor del texto */
     margin-left: -10px;
     margin-bottom: 15px;
     color: #292C32;
     transition: background-color 0.3s, color 0.3s;
-    width: auto; /* Asegúrate de que los enlaces se expandan con el texto */
+    width: auto;
+    /* Asegúrate de que los enlaces se expandan con el texto */
 }
 
 .nav-link .icon {
@@ -112,26 +131,33 @@ body {
     justify-content: flex-end;
     align-items: center;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
-    z-index: 1040; /* Menor que el z-index del dropdown-menu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    z-index: 1040;
+    /* Menor que el z-index del dropdown-menu */
 }
 
 .logo-img {
-    width: 200px; /* Ajusta esto según el tamaño de tu logo */
+    width: 200px;
+    /* Ajusta esto según el tamaño de tu logo */
 }
 
-/* Estilos para el contenido de las rutas hijas */
 .contenido-hijas {
     background-color: #EDF2F7;
     padding: 20px;
-    margin-top: 60px; /* Debe ser igual a la altura del panel superior */
-    position: fixed;
+    margin-top: 60px;
+    /* Debe ser igual a la altura del panel superior */
+    position: absolute;
+    /* Cambiar de fixed a absolute */
     left: 350px;
-    top: 60px; /* Ajuste para la altura del panel superior */
+    top: 60px;
+    /* Ajuste para la altura del panel superior */
     width: calc(100% - 350px);
+    bottom: 0;
+    /* Añadir esta línea */
+    right: 0;
+    /* Añadir esta línea */
     overflow-y: auto;
-    z-index: 1030; /* Menor que el z-index del dropdown-menu */
+    z-index: 1030;
+    /* Menor que el z-index del dropdown-menu */
     box-sizing: border-box;
 }
-
-

@@ -17,6 +17,8 @@ import { ModulesComponent } from './components/modules/modules.component';
 import { GestionarCuentaComponent } from './components/gestionar-cuenta/gestionar-cuenta.component';
 import { CambiarMPComponent } from './components/cambiar-mp/cambiar-mp.component';
 import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.component';
+import { RegistrarNominaComponent } from './components/registrar-nomina/registrar-nomina.component';
+import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.com
     ModulesComponent,
     GestionarCuentaComponent,
     CambiarMPComponent,
-    CambiarPlanComponent
+    CambiarPlanComponent,
+    RegistrarNominaComponent,
+    ListaNominaComponent
   ],
   imports: [
     BrowserModule,
