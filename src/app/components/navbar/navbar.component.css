@@ -1,0 +1,86 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #EDF2F7; /* Color de fondo para el resto de la pantalla */
+}
+
+/* Estilos para la barra de navegación lateral */
+.sidebar-sticky {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    padding-top: 10px;
+    background-color: #FFFFFF; /* Fondo de la barra de navegación */
+}
+
+/* Cambia el color del texto y el stroke al pasar el mouse */
+.nav-link:hover {
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    color: #2E5559;
+    background-color: #F8F8F8; /* Cambia el fondo al pasar el mouse, si es necesario */
+}
+
+.logo img {
+    margin-top: 20px;
+    margin-left: 5px;
+    max-width: 100%;
+    /* Agrega más estilos si es necesario */
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+}
+
+.user-img {
+    width: 52px; /* Tamaño más pequeño para la imagen */
+    height: 52px;
+    margin-right: 10px; /* Asegura un espacio entre la imagen y el texto */
+}
+
+.user-info h1 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    color: #000000;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: -2px;
+    margin-right: 10px;
+}
+
+.user-info h2 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: regular;
+    color: #A4A4A4;
+    font-size: 13px;
+}
+
+.dropdown img {
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    width: 30px; /* Ajusta el tamaño del botón de tres puntos si es necesario */
+}
+
+.dropdown-menu {
+    display: none; /* Oculta inicialmente el menú */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Muestra el menú al pasar el cursor */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    margin-left: -10px;
+    margin-bottom: 15px;
+    color: #292C32;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link .icon {
+    width: 24px; /* O el tamaño que tengan tus iconos */
+    height: 24px;
+    margin-right: 10px; /* Ajusta el margen según tus necesidades */
+}
+
