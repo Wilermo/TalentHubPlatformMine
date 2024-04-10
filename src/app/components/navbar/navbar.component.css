@@ -5,11 +5,14 @@ body {
 
 /* Estilos para la barra de navegación lateral */
 .sidebar-sticky {
+    font-size: 1.3rem; /* Aumenta el tamaño de la fuente */
+    padding: 10px; /* Aumenta el padding para un mejor ajuste */
     position: fixed;
     top: 0;
     height: 100vh;
-    padding-top: 10px;
+    width: 350px; /* Ajusta el ancho del sidebar si es necesario */
     background-color: #FFFFFF; /* Fondo de la barra de navegación */
+    z-index: 1050; /* Asegura que el sidebar esté sobre el contenido */
 }
 
 /* Cambia el color del texto y el stroke al pasar el mouse */
@@ -17,14 +20,17 @@ body {
     font-family: "DM Sans", sans-serif;
     font-weight: bold;
     color: #2E5559;
-    background-color: #F8F8F8; /* Cambia el fondo al pasar el mouse, si es necesario */
+    background-color: #F8F8F8;
 }
 
 .logo img {
+    width: 300%; /* Aumenta según necesites; ajusta el porcentaje o usa una medida fija como px */
+    height: auto; /* Mantiene la proporción del logo */
     margin-top: 20px;
-    margin-left: 5px;
-    max-width: 100%;
-    /* Agrega más estilos si es necesario */
+    margin-bottom: 35px;
+    margin-left: 10px; /* Centra el logo si aumenta el tamaño */
+    margin-right: auto; /* Centra el logo si aumenta el tamaño */
+    display: block; /* Asegura que las margenes automáticas funcionen */
 }
 
 .user-section {
@@ -33,54 +39,99 @@ body {
 }
 
 .user-img {
-    width: 52px; /* Tamaño más pequeño para la imagen */
-    height: 52px;
-    margin-right: 10px; /* Asegura un espacio entre la imagen y el texto */
-}
-
-.user-info h1 {
-    font-family: "DM Sans", sans-serif;
-    font-weight: bold;
-    color: #000000;
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: -2px;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 15px;
     margin-right: 10px;
 }
 
+.user-info h1, .user-info h2 {
+    margin-right: 20px;
+}
+
+.user-info h1 {
+    font-size: 23px;
+    margin-bottom: -2px;
+}
+
 .user-info h2 {
-    font-family: "DM Sans", sans-serif;
-    font-weight: regular;
+    font-size: 17px;
     color: #A4A4A4;
-    font-size: 13px;
 }
 
 .dropdown img {
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    width: 30px; /* Ajusta el tamaño del botón de tres puntos si es necesario */
+    cursor: pointer;
+    width: 40px;
 }
 
 .dropdown-menu {
-    display: none; /* Oculta inicialmente el menú */
+    display: none;
+    z-index: 1070; /* Asegura que el dropdown-menu esté sobre todos los demás paneles */
+    position: absolute; /* El posicionamiento absoluto respecto a su contenedor relativo */
+    width: 100%; /* O cualquier otra medida que necesites */
+    left: 0; /* Alineación con el lado izquierdo del contenedor */
+}
+
+.dropdown-item {
+    font-family: 'DM Sans', sans-serif;
+    color: #292C32;
+    font-size: 17px;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block; /* Muestra el menú al pasar el cursor */
+    display: block;
 }
 
 .nav-link {
     display: flex;
     align-items: center;
     font-family: 'DM Sans', sans-serif;
+    font-size: 1.5rem; /* Aumenta el tamaño del texto */
+    padding: 12px 15px; /* Aumenta el padding para más espacio alrededor del texto */
     margin-left: -10px;
     margin-bottom: 15px;
     color: #292C32;
     transition: background-color 0.3s, color 0.3s;
+    width: auto; /* Asegúrate de que los enlaces se expandan con el texto */
 }
 
 .nav-link .icon {
-    width: 24px; /* O el tamaño que tengan tus iconos */
+    width: 24px;
     height: 24px;
-    margin-right: 10px; /* Ajusta el margen según tus necesidades */
+    margin-right: 10px;
 }
+
+/* Estilos para Panel Superior */
+.panel-superior {
+    background-color: #EDF2F7;
+    position: fixed;
+    left: 350px;
+    top: 0;
+    width: calc(100% - 350px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    z-index: 1040; /* Menor que el z-index del dropdown-menu */
+}
+
+.logo-img {
+    width: 200px; /* Ajusta esto según el tamaño de tu logo */
+}
+
+/* Estilos para el contenido de las rutas hijas */
+.contenido-hijas {
+    background-color: #EDF2F7;
+    padding: 20px;
+    margin-top: 60px; /* Debe ser igual a la altura del panel superior */
+    position: fixed;
+    left: 350px;
+    top: 60px; /* Ajuste para la altura del panel superior */
+    width: calc(100% - 350px);
+    overflow-y: auto;
+    z-index: 1030; /* Menor que el z-index del dropdown-menu */
+    box-sizing: border-box;
+}
+
 
