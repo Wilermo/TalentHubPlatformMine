@@ -8,13 +8,15 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
+import { GestionarCuentaComponent } from './components/gestionar-cuenta/gestionar-cuenta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ResetPasswordComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    GestionarCuentaComponent
   ],
   imports: [
     BrowserModule,
