@@ -1,17 +1,17 @@
 /* Estilos personalizados para los módulos */
 .background-container {
-    background-color: #FFF7F7;
+    background-color: #E3E3E3;
     /* Color de fondo */
     padding: 20px;
     /* Espaciado interno */
-    border: 2px solid #FFF7F7;
+    border: 2px solid #E3E3E3;
     /* Borde */
     border-radius: 10px;
     /* Permitir desplazamiento horizontal */
 }
 
 .card-link {
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .card-link:hover {

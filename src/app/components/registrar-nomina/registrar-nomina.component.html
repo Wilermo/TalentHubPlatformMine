@@ -1,32 +1,97 @@
-<div class="container mt-4">
-    <h2>Registro de Empleado</h2>
-    <hr>
+<body class="background-container">
+    <div class="container mt-4">
+        <h2 class="text-left mb-4">Registro de Nómina</h2>
 
-    <!-- Formulario de registro -->
-    <form>
-        <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del empleado">
-        </div>
-        <div class="form-group">
-            <label for="tipo-contrato">Tipo de Contrato:</label>
-            <input type="text" class="form-control" id="tipo-contrato" placeholder="Ingrese el tipo de contrato">
-        </div>
-        <div class="form-group">
-            <label for="salario">Salario:</label>
-            <input type="text" class="form-control" id="salario" placeholder="Ingrese el salario">
-        </div>
-        <div class="form-group">
-            <label for="fecha-ingreso">Fecha de Ingreso:</label>
-            <input type="date" class="form-control" id="fecha-ingreso">
-        </div>
-        <div class="form-group">
-            <label for="estado">Estado:</label>
-            <select class="form-control" id="estado">
-                <option value="activo">Activo</option>
-                <option value="inactivo">Inactivo</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Registrar</button>
-    </form>
-</div>
+        <form class="custom-form">
+            <!-- Campos de datos personales -->
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="apellidos">Apellido</label>
+                        <input type="text" class="form-control" id="apellidos">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="tipoContrato">Tipo de Contrato</label>
+                    <select class="form-control" id="tipoContrato">
+                        <option value="tiempo completo">Tiempo Completo</option>
+                        <option value="medio tiempo">Medio Tiempo</option>
+                        <option value="temporal">Temporal</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="departamento">Departamento</label>
+                    <select class="form-control" id="departamento">
+                        <option value="ventas">Ventas</option>
+                        <option value="recursos humanos">Recursos Humanos</option>
+                        <option value="producción">Producción</option>
+                        <!-- Agregar más opciones según tus necesidades -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="fechaIngreso">Fecha de Ingreso</label>
+                    <input type="date" class="form-control" id="fechaIngreso">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fechaSalida">Fecha de Salida (opcional)</label>
+                    <input type="date" class="form-control" id="fechaSalida">
+                </div>
+            </div>
+
+            <!-- Campo de Status -->
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Campos de historial laboral, académico y reconocimientos -->
+            <div class="form-group">
+                <label for="historialLaboral">Historial Laboral</label>
+                <textarea class="form-control" id="historialLaboral" rows="6"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="historialAcademico">Historial Académico</label>
+                <textarea class="form-control" id="historialAcademico" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="reconocimientos">Reconocimientos</label>
+                <textarea class="form-control" id="reconocimientos" rows="4"></textarea>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-group mt-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-secondary btn-lg">Atrás</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary btn-lg ml-auto">Guardar</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </form>
+    </div>
+</body>
