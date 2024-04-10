@@ -8,7 +8,12 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
-import { GestionarCuentaComponent } from './components/gestionar-cuenta/gestionar-cuenta.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CompanyComponent } from './components/company/company.component';
+import { UsersComponent } from './components/users/users.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { ModulesComponent } from './components/modules/modules.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { GestionarCuentaComponent } from './components/gestionar-cuenta/gestiona
     LoginComponent,
     ResetPasswordComponent,
     ForgotPasswordComponent,
-    GestionarCuentaComponent
+    HomeComponent,
+    NavbarComponent,
+    CompanyComponent,
+    UsersComponent,
+    PaymentsComponent,
+    ModulesComponent
   ],
   imports: [
     BrowserModule,

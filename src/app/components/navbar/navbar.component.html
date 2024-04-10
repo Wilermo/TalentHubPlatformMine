@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <!-- Añade aquí tus enlaces a CSS externos y fuentes -->
+</head>
+
+<body>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <!-- Sidebar navigation -->
+      <div class="col-md-4 col-lg-3 bg-white"> <!-- Añadido el color de fondo a la barra -->
+        <!-- Sidebar content -->
+        <div class="sidebar-sticky">
+            <div class="logo my-3">
+              <img src="assets/company_logo.svg" alt="Logo de la empresa" class="img-fluid">
+            </div>
+            <div class="d-flex align-items-center user-section my-3">
+              <img src="assets/foto_admin.svg" alt="Foto del administrador" class="user-img rounded-circle mr-2">
+              <div class="user-info mr-3">
+                <h1>Martin Chen</h1>
+                <h2>Administrador</h2>
+              </div>
+              <div class="dropdown">
+                <img src="assets/icon_options.svg" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Perfil</a>
+                  <a class="dropdown-item" href="#">Suscripciones</a>
+                </div>
+              </div>
+            </div>
+            <nav class="nav flex-column">
+              <!-- Nav items con iconos -->
+              <a class="nav-link active" href="#"><img src="assets/icon_home.svg" alt="" class="icon"> Tablero</a>
+              <a class="nav-link" href="#"><img src="assets/icon_empresa.svg" alt="" class="icon"> Empresa</a>
+              <a class="nav-link" href="#"><img src="assets/icon_usuarios.svg" alt="" class="icon"> Usuarios</a>
+              <a class="nav-link" href="#"><img src="assets/icon_pagos.svg" alt="" class="icon"> Pagos</a>
+              <a class="nav-link" href="#"><img src="assets/icon_modulos.svg" alt="" class="icon"> Módulos</a>
+            </nav>
+        </div>
+      </div>
+      <!-- Main content -->
+      <div class="col-md-8 col-lg-9 bg-light"> <!-- Añadido el color de fondo al contenido principal -->
+        <!-- Aquí va el contenido principal de tu página -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<router-outlet></router-outlet>
