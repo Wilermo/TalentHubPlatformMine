@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+    background-image: url(src/assets/img_cambiarPlan.svg);
+    background-size: cover; 
+    background-position: center;
+    height: 100vh; 
+    width: 100%; 
+}
+h1 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    color: #E3E3E3;
+    font-size: 64px;
+}
+h1 span {
+    color: #33A69A;
+}
+p {
+    font-family: "poppins", sans-serif;
+    font-weight: regular;
+    color: #E3E3E3;
+    font-size: 30px;
+    padding-top: 2%;
+    padding-bottom: 30px;
+}
+.col{
+    background-color: white;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-left: 0px !important; /* Eliminamos el padding izquierdo */
+    padding-right: 0 !important; /* Eliminamos el padding derecho */
+    padding-bottom: 50px !important;
+    padding-top: 50px !important;
+}
+.col:hover {
+    transform: scale(1.1); 
+}
+h3{
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    color: #2E575A;
+    font-size: 64px;
+}

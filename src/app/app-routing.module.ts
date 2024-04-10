@@ -6,12 +6,14 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.component';
+import { CambiarMPComponent } from './components/cambiar-mp/cambiar-mp.component';
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'forgot', component:ForgotPasswordComponent},
   {path: 'reset-password', component:ResetPasswordComponent},
   {path: 'cambiar-plan', component:CambiarPlanComponent},
+  {path: 'cambiar-mp', component:CambiarMPComponent},
   {
     path: '', // Utiliza una ruta vacía como prefijo para las rutas con Navbar
     component: NavbarComponent, // Este componente actúa como un layout
