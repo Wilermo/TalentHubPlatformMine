@@ -19,6 +19,8 @@ import { CambiarMPComponent } from './components/cambiar-mp/cambiar-mp.component
 import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.component';
 import { RegistrarNominaComponent } from './components/registrar-nomina/registrar-nomina.component';
 import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.com
     CambiarMPComponent,
     CambiarPlanComponent,
     RegistrarNominaComponent,
-    ListaNominaComponent
+    ListaNominaComponent,
+    CrearUsuarioComponent,
+    CrearCuentaComponent
   ],
   imports: [
     BrowserModule,

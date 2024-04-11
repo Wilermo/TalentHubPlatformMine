@@ -13,6 +13,8 @@ import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.com
 import { CambiarMPComponent } from './components/cambiar-mp/cambiar-mp.component';
 import { RegistrarNominaComponent } from './components/registrar-nomina/registrar-nomina.component';
 import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
@@ -31,6 +33,8 @@ const routes: Routes = [
       { path: 'modules', component: ModulesComponent },
       { path: 'registrar-nomina', component: RegistrarNominaComponent },
       { path: 'lista-nomina', component: ListaNominaComponent },
+      { path: 'crear-usuario', component: CrearUsuarioComponent },
+      { path: 'crear-cuenta', component: CrearCuentaComponent },
        // Ruta hija
       // Puedes añadir más rutas hijas que requieran Navbar aquí
     ]
