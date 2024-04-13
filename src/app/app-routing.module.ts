@@ -15,6 +15,7 @@ import { RegistrarNominaComponent } from './components/registrar-nomina/registra
 import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
+import { CuponComponent } from './components/cupon/cupon.component';
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'reset-password', component:ResetPasswordComponent},
   {path: 'cambiar-plan', component:CambiarPlanComponent},
   {path: 'cambiar-mp', component:CambiarMPComponent},
+  {path: 'cupon', component:CuponComponent},
   {
     path: '', // Utiliza una ruta vacía como prefijo para las rutas con Navbar
     component: NavbarComponent, // Este componente actúa como un layout
