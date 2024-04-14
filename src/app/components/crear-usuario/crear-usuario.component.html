@@ -2,17 +2,37 @@
     <div class="container mt-4">
         <h2 class="text-left mb-4">Creación de usuario</h2>
 
-        <form class="custom-form">
+        <form class="custom-form mt-3">
+            <!-- Campo desplegable para roles -->
+            <div class="form-group">
+                <label for="rol">Seleccionar Rol</label>
+                <select class="form-control" id="rol">
+                    <option>Reclutador</option>
+                    <option>Nómina</option>
+                </select>
+            </div>
+
             <!-- Campos de datos personales -->
             <div class="form-row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-group">
-                        <label for="nombre">Correo para solicitar creación de usuario</label>
+                        <label for="correo">Correo para solicitar creación de usuario</label>
                         <input type="text" class="form-control" id="correo">
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido">
+                    </div>
+                </div>
             </div>
-
 
             <!-- Botones -->
             <div class="form-group mt-3">
