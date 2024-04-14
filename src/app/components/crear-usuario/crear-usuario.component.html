@@ -2,11 +2,11 @@
     <div class="container mt-4">
         <h2 class="text-left mb-4">Creación de usuario</h2>
 
-        <form class="custom-form mt-3">
+        <form class="custom-form" (ngSubmit)="enviarDatos()">
             <!-- Campo desplegable para roles -->
             <div class="form-group">
                 <label for="rol">Seleccionar Rol</label>
-                <select class="form-control" id="rol">
+                <select class="form-control" id="rol" [(ngModel)]="rol" name="rol">
                     <option>Reclutador</option>
                     <option>Nómina</option>
                 </select>
@@ -17,19 +17,19 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="correo">Correo para solicitar creación de usuario</label>
-                        <input type="text" class="form-control" id="correo">
+                        <input type="text" class="form-control" id="correo" [(ngModel)]="correo" name="correo">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre">
+                        <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" name="nombre">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="apellido">Apellido</label>
-                        <input type="text" class="form-control" id="apellido">
+                        <input type="text" class="form-control" id="apellido" [(ngModel)]="apellido" name="apellido">
                     </div>
                 </div>
             </div>
