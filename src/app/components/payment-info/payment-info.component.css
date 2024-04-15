@@ -1,3 +1,5 @@
+/* Añade tu CSS personalizado aquí */
+
 html {
     box-sizing: border-box;
     margin: 0;
@@ -11,29 +13,34 @@ body {
     background-image: url(src/assets/img_cambiarPlan.svg);
     background-size: cover;
     height: 100vh;
-    width: 100%;
-    padding-top: 400px;
+}
+
+.aviso {
+    background-color: #22d8ae5a;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.aviso p {
+    color: #F5F6FD;
 }
 
 .container {
-
-    width: 90%;
-    height: 60vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-
 }
 
 .container-plan {
     background-color: rgba(255, 255, 255, 0.69);
     border-radius: 6px;
-    padding: 20px;
     width: 1000px;
 }
 
+.container-plan:hover {
+    transform: scale(1.02);
+}
+
 .container-plan-buttom {
-    
     border-radius: 6px;
     width: 40%;
     margin-left: 20px;
@@ -51,6 +58,7 @@ body {
     font-weight: 400;
     font-size: 24px;
     margin: 0%;
+    border-radius: 6px;
 }
 
 .contract {
@@ -58,7 +66,6 @@ body {
     font-weight: 600;
     font-size: 64px;
     color: #059D79;
-    
     margin: 0%;
     display: flex;
     flex-direction: column;
@@ -69,31 +76,35 @@ body {
     font-weight: 400;
     font-size: 24px;
     margin: 0%;
-    
-
 }
 
 .coupon {
     background-color: rgba(255, 255, 255, 0.69);
     margin-bottom: 10px;
     height: 50%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 24px;
     flex-direction: column;
-
+    border-radius: 6px;
+    padding-top: 10px;
 }
-.pencil{
+
+.coupon:hover {
+    transform: scale(1.02);
+}
+
+.pencil {
     margin-right: 30px;
-    height: 225px;
-    width: 225px;
+    height: 150px;
+    width: 150px;
     padding-bottom: 30px;
-
 }
+
 .pay {
     background-color: rgba(255, 255, 255, 0.69);
     margin-top: 10px;
@@ -107,8 +118,20 @@ body {
     font-weight: 400;
     font-size: 24px;
     flex-direction: column;
+    border-radius: 6px;
+    padding-top: 10px;
 }
-.card{
+.deadline{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #059D79;
+}
+.pay:hover {
+    transform: scale(1.02);
+}
+
+.card {
     margin-right: 30px;
     height: 225px;
     width: 225px;

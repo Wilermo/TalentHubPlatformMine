@@ -22,6 +22,8 @@ import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.com
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 import { CuponComponent } from './components/cupon/cupon.component';
+import { TarjetaVisaComponent } from './components/tarjeta-visa/tarjeta-visa.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -42,13 +44,15 @@ import { CuponComponent } from './components/cupon/cupon.component';
     ListaNominaComponent,
     CrearUsuarioComponent,
     CrearCuentaComponent,
-    CuponComponent
+    CuponComponent,
+    TarjetaVisaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

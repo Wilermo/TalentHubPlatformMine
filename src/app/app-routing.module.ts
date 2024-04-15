@@ -17,6 +17,8 @@ import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.
 import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 import { CuponComponent } from './components/cupon/cupon.component';
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
+import { TarjetaVisaComponent } from './components/tarjeta-visa/tarjeta-visa.component';
+
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
@@ -39,6 +41,8 @@ const routes: Routes = [
       { path: 'lista-nomina', component: ListaNominaComponent },
       { path: 'crear-usuario', component: CrearUsuarioComponent },
       { path: 'crear-cuenta', component: CrearCuentaComponent },
+      {path: 'cambiar-plan',component: CambiarPlanComponent},
+      { path: 'visa', component: TarjetaVisaComponent }
        // Ruta hija
       // Puedes añadir más rutas hijas que requieran Navbar aquí
     ]

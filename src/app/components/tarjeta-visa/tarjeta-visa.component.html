@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <main class="main-container">
+    <section class="main-container__background-section">
+      <div class="card">
+        <img class="card__logo" src="assets/visa-card.svg" alt="logo">
+        <p class="card__number">0000 0000 0000 0000</p>
+        <div class="card__details">
+          <p class="card__details-name">Laura Moreno</p>
+          <p><span class="card__month" >00</span>/<span class="card__year">00</span></p>
+        </div>
+      </div>
+
+      <div class="card-back">
+        <p class="card-back__cvc">000</p>
+      </div>
+    </section>
+
+    <section class="main-container__form-section">
+      <form class="form" action="">
+        <label class="form__label" for="cardholder">Nombre que aparece en la tarjeta</label>
+        <input class="form__input" type="text" name="cardholder" id="cardholder" placeholder="e.g. Laura Moreno">
+        <div class="form__cardholder--error error"></div>
+
+        <label class="form__label" for="cardNumber">Número de tarjeta</label>
+        <input class="form__input" type="text" name="cardNumber" id="cardNumber" maxlength="19" placeholder="e.g. 1234 5678 9123 0000">
+        <div class="form__inputnumber--error error"></div>
+
+        <div class="form__date-cvc">
+    
+          <label class="form__label" for="cardMonth">Fecha de Expiración (MM/YY)</label>
+          
+          <label class="form__label" for="cardCvc">CVC</label>
+         
+          <div class="form__date">
+            <input class="form__input" type="text" maxlength="2" name="cardMonth" id="cardMonth" placeholder="MM">
+            <input class="form__input" type="text" maxlength="2" name="cardYear" id="cardYear" placeholder="YY">
+          </div>
+        
+          <input class="form__input" type="text" maxlength="3" name="cardCvc" id="cardCvc" placeholder="e.g. 123">
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1"> ¿Renovación automática?</label>
+          </div>
+          
+          <div class="form__errors-container">
+            <div class="form__input-mm--error error"></div>
+            <div class="form__input-yy--error error"></div>
+          </div>
+          
+          <div class="form__input-cvc--error error"></div>
+        </div>
+        <input class="form__submit" type="submit" value="Confirmar">
+      </form>
+
+
+      <section class="thanks-section">
+        <img class="thanks-section__img" src="assets/icon_complete.svg" alt="complete icon">
+        <h1 class="thanks-section__title">Gracias!</h1>
+        <p class="thanks-section__text">Hemos añadido sus datos de tarjeta correctamente</p>
+        <button class="thanks-section__button">Continuar</button>
+      </section>
+
+
+    </section>
+  </main>
+ 
+</body>
+</html>

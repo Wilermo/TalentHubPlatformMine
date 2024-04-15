@@ -11,32 +11,48 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="container-plan">
-            <div class="payment-method">
-                <div class="text">
-                    <p class="plan">Tu plan</p>
-                    <p class="contract">Trial</p>
-                    <p class="card-number">Tarjeta Visa terminada en 3465</p>
+    <section>
+        <div class="container py-3">
+            <div class="row aviso py-4 px-5">
+                <div class="col-auto col1">
+                    <i class="bi bi-exclamation-circle" style="font-size: 2rem; color: #F5F6FD"></i>
+                </div>
+                <div class="col">
+                    <p class="plan">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe explicabo aliquam corrupti commodi laudantium et repudiandae aspernatur pariatur dolore autem tempora porro, esse exercitationem dicta quod.</p>
                 </div>
             </div>
-
         </div>
-
-        <div class="container-plan-buttom">
-            <div (click)="registerCoupon()" class="coupon">
-                <img src="assets/pencil.svg" class="pencil" >
-                <p>
-                    Registrar Cupón
-                </p>
+    </section>
+    <section>
+        <div class="container">
+            <div class="container-plan">
+                <div (click)="cambiarPlan()" class="payment-method">
+                    <div  class="text">
+                        <p class="plan">Tu plan</p>
+                        <p class="contract">{{ planData.contract }}</p>
+                        <p class="card-number">Tarjeta Visa terminada en {{ planData.cardNumber }}</p>
+                        <p class="deadline">Le quedan {{ planData.deadline }} días de su plan</p>
+                    </div>
+                </div>
+    
             </div>
-            <div (click)="placeCard()" class="pay">
-                <img src="assets/payCard.svg" class="pencil" >
-                <p>Método de Pago</p>
+    
+            <div class="container-plan-buttom">
+                <div (click)="registerCoupon()" class="coupon">
+                    <img src="assets/pencil.svg" class="pencil" >
+                    <p>
+                        Registrar Cupón
+                    </p>
+                </div>
+                <div (click)="placeCard()" class="pay">
+                    <img src="assets/payCard.svg" class="pencil" >
+                    <p>Método de Pago</p>
+                </div>
             </div>
+    
         </div>
-
-    </div>
+    </section>
+    
 
 
 </body>
