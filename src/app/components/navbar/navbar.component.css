@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: 'DM Sans', sans-serif;
     background-color: #EDF2F7;
@@ -143,7 +148,7 @@ body {
 
 .contenido-hijas {
     background-color: #EDF2F7;
-    padding: 20px;
+    padding: 0;
     margin-top: 60px;
     /* Debe ser igual a la altura del panel superior */
     position: absolute;

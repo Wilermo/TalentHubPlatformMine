@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-plan">
+            <div class="payment-method">
+                <div class="text">
+                    <p class="plan">Tu plan</p>
+                    <p class="contract">Trial</p>
+                    <p class="card-number">Tarjeta Visa terminada en 3465</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container-plan-buttom">
+            <div (click)="registerCoupon()" class="coupon">
+                <img src="assets/pencil.svg" class="pencil" >
+                <p>
+                    Registrar Cupón
+                </p>
+            </div>
+            <div (click)="placeCard()" class="pay">
+                <img src="assets/payCard.svg" class="pencil" >
+                <p>Método de Pago</p>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

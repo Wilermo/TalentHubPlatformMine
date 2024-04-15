@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
@@ -16,6 +16,7 @@ import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.com
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 import { CuponComponent } from './components/cupon/cupon.component';
+import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path: 'reset-password', component:ResetPasswordComponent},
   {path: 'cambiar-plan', component:CambiarPlanComponent},
   {path: 'cambiar-mp', component:CambiarMPComponent},
-  {path: 'cupon', component:CuponComponent},
+
   {
     path: '', // Utiliza una ruta vacía como prefijo para las rutas con Navbar
     component: NavbarComponent, // Este componente actúa como un layout
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'users', component: UsersComponent },
       { path: 'payments', component: PaymentsComponent },
       { path: 'modules', component: ModulesComponent },
+      { path: 'payment-info', component: PaymentInfoComponent},
       { path: 'registrar-nomina', component: RegistrarNominaComponent },
       { path: 'lista-nomina', component: ListaNominaComponent },
       { path: 'crear-usuario', component: CrearUsuarioComponent },
@@ -41,6 +43,7 @@ const routes: Routes = [
       // Puedes añadir más rutas hijas que requieran Navbar aquí
     ]
   },
+ {path: 'cupon', component: CuponComponent },
   { path: '**', redirectTo: '' }
 ];
 
