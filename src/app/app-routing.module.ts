@@ -11,13 +11,14 @@ import { ModulesComponent } from './components/modules/modules.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.component';
 import { CambiarMPComponent } from './components/cambiar-mp/cambiar-mp.component';
-import { RegistrarNominaComponent } from './components/registrar-nomina/registrar-nomina.component';
+import { RegistrarHojaComponent } from './components/registrar-hoja/registrar-hoja.component';
 import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 import { CuponComponent } from './components/cupon/cupon.component';
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 import { TarjetaVisaComponent } from './components/tarjeta-visa/tarjeta-visa.component';
+import { ListaAspirantesComponent } from './components/lista-aspirantes/lista-aspirantes.component';
 
 
 const routes: Routes = [
@@ -37,8 +38,9 @@ const routes: Routes = [
       { path: 'payments', component: PaymentsComponent },
       { path: 'modules', component: ModulesComponent },
       { path: 'payment-info', component: PaymentInfoComponent},
-      { path: 'registrar-nomina', component: RegistrarNominaComponent },
+      { path: 'registrar-hoja', component: RegistrarHojaComponent },
       { path: 'lista-nomina', component: ListaNominaComponent },
+      { path: 'lista-aspirantes', component: ListaAspirantesComponent },
       { path: 'crear-usuario', component: CrearUsuarioComponent },
       { path: 'crear-cuenta', component: CrearCuentaComponent },
       {path: 'cambiar-plan',component: CambiarPlanComponent},
