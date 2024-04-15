@@ -21,6 +21,7 @@ import { RegistrarNominaComponent } from './components/registrar-nomina/registra
 import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
+import { CuponComponent } from './components/cupon/cupon.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.com
     RegistrarNominaComponent,
     ListaNominaComponent,
     CrearUsuarioComponent,
-    CrearCuentaComponent
+    CrearCuentaComponent,
+    CuponComponent
   ],
   imports: [
     BrowserModule,

@@ -14,10 +14,11 @@
         <div class="col col2">
           <div class="contenido">
             <img src="assets/talent_hub_l.svg" alt="">
-            <form ng-submit="onSubmit()">
+            <form (ngSubmit)="onSubmit()">
               <div class="mb-3">
-                <input type="text" class="form-control" id="exampleInputPassword1" ng-model="codigo" name="codigo">
+                <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="codigo" name="codigo">
                 <label for="exampleInputPassword1" class="form-label">Ingresa tu cupón</label>
+                <div *ngIf="showError" class="error-message">Campo requerido</div>
               </div>
               <button type="submit" class="btn btn-primary">Canjear Cupón</button>
             </form>
@@ -26,9 +27,6 @@
       </div>
     </div>
   </div>
-
-  <script src="angular.min.js"></script>
-  <script src="cuponController.js"></script>
 </body>
 
 </html>
