@@ -6,9 +6,10 @@
             <!-- Campo desplegable para roles -->
             <div class="form-group">
                 <label for="rol">Seleccionar Rol</label>
-                <select class="form-control" id="rol" [(ngModel)]="rol" name="rol">
-                    <option>Reclutador</option>
-                    <option>Nómina</option>
+                <select class="form-control" id="rol" [(ngModel)]="nuevoUsuario.role" name="rol">
+                    <option value="">Seleccione un rol</option>
+                    <option value="Reclutador">Reclutador</option>
+                    <option value="Nomina">Nómina</option>
                 </select>
             </div>
 
@@ -17,19 +18,22 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="correo">Correo para solicitar creación de usuario</label>
-                        <input type="text" class="form-control" id="correo" [(ngModel)]="correo" name="correo">
+                        <input type="email" class="form-control" id="correo" [(ngModel)]="nuevoUsuario.email"
+                            name="correo" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" name="nombre">
+                        <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoUsuario.firstName"
+                            name="nombre" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="apellido">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" [(ngModel)]="apellido" name="apellido">
+                        <input type="text" class="form-control" id="apellido" [(ngModel)]="nuevoUsuario.lastName"
+                            name="apellido" required>
                     </div>
                 </div>
             </div>
@@ -41,14 +45,10 @@
                         <button type="button" routerLink="/users" class="btn btn-secondary btn-lg">Atrás</button>
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" routerLink="/users" class="btn btn-primary btn-lg ml-auto">Enviar
-                            correo</button>
+                        <button type="submit" class="btn btn-primary btn-lg ml-auto">Enviar correo</button>
                     </div>
                 </div>
             </div>
-
-
-
         </form>
     </div>
 </body>
