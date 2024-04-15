@@ -9,11 +9,7 @@ import { User } from '../../shared/model/auth/user';
   styleUrls: ['./crear-usuario.component.css']
 })
 export class CrearUsuarioComponent implements OnInit {
-  // Usuario inicializado con valores por defecto
   nuevoUsuario: User = new User();
-
-  // Ya no necesitas definir las propiedades individuales aquí, 
-  // ya que las manejarás dentro del objeto nuevoUsuario
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -21,21 +17,23 @@ export class CrearUsuarioComponent implements OnInit {
   }
 
   enviarDatos(): void {
-    // Mostrar los datos en la consola
-    console.log('Datos que se envían:', this.nuevoUsuario);
+    const token = localStorage.getItem('token');
+    if (token) {
+      console.log('Datos que se envían:', this.nuevoUsuario);
+      this.userService.createUser(this.nuevoUsuario, this.nuevoUsuario.role, token).subscribe({
+        next: (data) => {
+          console.log('Respuesta recibida:', data);
+          this.router.navigate(['/users']);
+        },
+        error: (err) => {
+          console.error('Error al enviar datos:', err);
+        }
+      });
+      
+    } else {
+      console.error('No se encontró el token de autenticación');
+      this.router.navigate(['/login']);
+    }
+  }
   
-    // Lógica para enviar los datos, por ejemplo, a través de un servicio HTTP
-    this.userService.createUser(this.nuevoUsuario, this.nuevoUsuario.role).subscribe({
-      next: (data) => {
-        // Manejar la respuesta
-        console.log('Respuesta recibida:', data);
-        
-        // Navegar a otra ruta si es necesario
-        this.router.navigate(['/users']);
-      },
-      error: (err) => {
-        console.error('Error al enviar datos:', err);
-      }
-    });
-  }  
 }
