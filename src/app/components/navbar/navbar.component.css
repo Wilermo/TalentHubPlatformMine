@@ -83,8 +83,7 @@ body {
 
 .dropdown-menu {
     display: none;
-    z-index: 1070;
-    /* Asegura que el dropdown-menu esté sobre todos los demás paneles */
+    z-index: 1000;
     position: absolute;
     /* El posicionamiento absoluto respecto a su contenedor relativo */
     width: 100%;
