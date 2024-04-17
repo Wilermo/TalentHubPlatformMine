@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
+import { AuthService  } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -8,23 +9,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ForgotPasswordComponent {
   email: string = '';
-  constructor(private http: HttpClient) {}
+  constructor(private authService: AuthService) {}
 
-  onSubmit(): void {
-    if (this.email) {
-      // Send Credentials
-      this.http.post<any>('URL_DEL_BACKEND/login', { email: this.email })
-        .subscribe(
-          response => {
-            // Manage the answer
-            console.log('answer backend:', response);
-          },
-          error => {
-            // Error
-            console.error('Error sending credentials:', error);
-          }
-        );
-    }
+  recoverPassword(){
+    this.authService.forgotPassword(this.email).subscribe(()=>{
+      Swal.fire({
+        icon: 'success',
+        iconColor: '#AA2535',
+        title: 'Correo enviado',
+        text: 'Se ha enviado un correo con las instrucciones para recuperar su contraseña',
+        confirmButtonText: 'Okay',
+        confirmButtonColor: '#AA2535'
+      })
+    },
+    (error)=>{
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        iconColor: '#AA2535',
+        text: 'No se ha podido enviar el correo',
+        confirmButtonText: 'Okay',
+        confirmButtonColor: '#AA2535'
+      })
+    })
   }
 
 }
