@@ -7,10 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ModulesComponent {
   rol = localStorage.getItem('role');
-  showRecruitmentCard: boolean = this.rol === 'RECLUTAMIENTO, default-roles-talentsoft';
-  showDespidoCard: boolean = this.rol === 'DESPIDO, default-roles-talentsoft';
-  showSSTCard: boolean = this.rol === 'SST, default-roles-talentsoft';
-  showBICard: boolean = this.rol === 'BI, default-roles-talentsoft';
-  showNominaCard: boolean = this.rol === 'NOMINA_ELECTRONICA, default-roles-talentsoft';
+  showAllCards: boolean = this.rol === 'ADMIN, default-roles-talentsoft';
+
+  // Establecer cada tarjeta para que se muestre si el usuario es ADMIN o tiene el rol específico.
+  showRecruitmentCard: boolean = this.showAllCards || this.rol === 'RECLUTAMIENTO, default-roles-talentsoft';
+  showDespidoCard: boolean = this.showAllCards || this.rol === 'DESPIDO, default-roles-talentsoft';
+  showSSTCard: boolean = this.showAllCards || this.rol === 'SST, default-roles-talentsoft';
+  showBICard: boolean = this.showAllCards || this.rol === 'BI, default-roles-talentsoft';
+  showNominaCard: boolean = this.showAllCards || this.rol === 'NOMINA_ELECTRONICA, default-roles-talentsoft';
 
 }

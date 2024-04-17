@@ -55,9 +55,8 @@ export class LoginComponent {
           const rol = localStorage.getItem('role');
           if (rol === 'ADMIN, default-roles-talentsoft') {
             this.router.navigate(['/home']);
-          } if (rol !== 'RECLUTAMIENTO, default-roles-talentsoft') {
+          } if (rol !== 'ADMIN, default-roles-talentsoft') {
             this.router.navigate(['/modules']);
-            this.showRecruitmentCard = false;
           }
         },
         (error: any) => {
