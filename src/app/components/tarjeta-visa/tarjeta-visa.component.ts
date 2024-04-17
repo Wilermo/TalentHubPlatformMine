@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidationService } from 'src/app/service/validation.service';
 import { SendBService } from 'src/app/service/send-b.service';
+import { Card } from '../../shared/model/Entities/card';
+import { Router } from '@angular/router';
+import { RegistrarTarjetaService } from 'src/app/shared/model/registraTarjeta.service';
+
 @Component({
   selector: 'app-tarjeta-visa',
   templateUrl: './tarjeta-visa.component.html',
@@ -8,13 +12,15 @@ import { SendBService } from 'src/app/service/send-b.service';
 })
 export class TarjetaVisaComponent implements OnInit {
 
+  nuevaTarjeta: Card = new Card();
+
   cardDetails: { [key: string]: { card: HTMLElement, input: HTMLInputElement, errorDiv: HTMLElement, validation: boolean } } = {};
   confirmBtn!: HTMLButtonElement;
   formSection!: HTMLElement;
   thanksSection!: HTMLElement;
   errorSection!: HTMLElement;
 
-  constructor(private validationService: ValidationService, private sendBService: SendBService) { }
+  constructor(private validationService: ValidationService, private registrarTarjeta: RegistrarTarjetaService,private router: Router) { }
 
   ngOnInit() {
     const fields = [
@@ -65,21 +71,30 @@ export class TarjetaVisaComponent implements OnInit {
       });
 
       if (isValid) {
-        this.enviarDatosAlBackend(this.cardDetails)
+        this.enviarDatos()
       }
     });
   }
 
-  enviarDatosAlBackend(data: any) {
-    this.sendBService.enviarDatos(data).subscribe(
-      response => {
-        console.log('Datos enviados exitosamente al backend:', response);
-        this.formSection.style.display = 'none';
-        this.thanksSection.style.display = 'block';
-      },
-      error => {
-        console.error('Error al enviar datos al backend:', error);
-      }
-    );
+
+
+  enviarDatos(): void {
+    const token = localStorage.getItem('token');
+    if (token) {
+      console.log('Datos que se envían:', this.nuevaTarjeta);
+      this.registrarTarjeta.registrarTarjeta(this.nuevaTarjeta, token).subscribe({
+        next: (data) => {
+          console.log('Respuesta recibida:', data);
+          this.router.navigate(['/users']);
+        },
+        error: (err) => {
+          console.error('Error al enviar datos:', err);
+        }
+      });
+      
+    } else {
+      console.error('No se encontró el token');
+      this.router.navigate(['/login']);
+    }
   }
 }
