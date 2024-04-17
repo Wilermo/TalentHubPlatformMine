@@ -45,7 +45,7 @@
         
           <input class="form__input" type="text" maxlength="3" [(ngModel)]="nuevaTarjeta.cardCvc" name="cardCvc" id="cardCvc" placeholder="e.g. 123">
           <div class="mb-3 form-check">
-            <input type="checkbox" class="form-input" id="exampleCheck1" name="autoRenewal" [(ngModel)]="nuevaTarjeta.autoRenewal" (ngModelChange)="checkboxChanged($event)" (change)="checkboxChanged($event)">
+            <input type="checkbox" class="form-input" id="exampleCheck1" name="autoRenewal"  (change)="checkboxChanged($event)">
             <label class="form-check-label" for="exampleCheck1"> ¿Renovación automática?</label>
           </div>
           

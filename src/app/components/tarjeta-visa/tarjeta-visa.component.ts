@@ -13,6 +13,7 @@ import { RegistrarTarjetaService } from 'src/app/shared/model/registraTarjeta.se
 export class TarjetaVisaComponent implements OnInit {
 
   nuevaTarjeta: Card = new Card();
+  
 
   cardDetails: { [key: string]: { card: HTMLElement, input: HTMLInputElement, errorDiv: HTMLElement, validation: boolean } } = {};
   confirmBtn!: HTMLButtonElement;
