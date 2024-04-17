@@ -11,6 +11,7 @@ import { UtilService } from '../../../app/service/util.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  showRecruitmentCard: boolean = false;
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -54,8 +55,9 @@ export class LoginComponent {
           const rol = localStorage.getItem('role');
           if (rol === 'ADMIN, default-roles-talentsoft') {
             this.router.navigate(['/home']);
-          } else if (rol !== 'ADMIN, default-roles-talentsoft') {
+          } if (rol !== 'RECLUTAMIENTO, default-roles-talentsoft') {
             this.router.navigate(['/modules']);
+            this.showRecruitmentCard = false;
           }
         },
         (error: any) => {
