@@ -1,0 +1,139 @@
+/* Añade tu CSS personalizado aquí */
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 32.5%;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-image: url(src/assets/img_cambiarPlan.svg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.aviso {
+    background-color: #22d8ae5a;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.aviso p {
+    color: #F5F6FD;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-plan {
+    background-color: rgba(255, 255, 255, 0.69);
+    border-radius: 6px;
+    width: 1000px;
+}
+
+.container-plan:hover {
+    transform: scale(1.02);
+}
+
+.container-plan-buttom {
+    border-radius: 6px;
+    width: 40%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.text {
+    padding: 5%;
+}
+
+.plan {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0%;
+    border-radius: 6px;
+}
+
+.contract {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    color: #059D79;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-number {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0%;
+}
+
+.coupon {
+    background-color: rgba(255, 255, 255, 0.69);
+    margin-bottom: 10px;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    flex-direction: column;
+    border-radius: 6px;
+    padding-top: 10px;
+}
+
+.coupon:hover {
+    transform: scale(1.02);
+}
+
+.pencil {
+    margin-right: 30px;
+    height: 150px;
+    width: 150px;
+    padding-bottom: 30px;
+}
+
+.pay {
+    background-color: rgba(255, 255, 255, 0.69);
+    margin-top: 10px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    flex-direction: column;
+    border-radius: 6px;
+    padding-top: 10px;
+}
+.deadline{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #059D79;
+}
+.pay:hover {
+    transform: scale(1.02);
+}
+
+.card {
+    margin-right: 30px;
+    height: 225px;
+    width: 225px;
+    padding-bottom: 30px;
+}

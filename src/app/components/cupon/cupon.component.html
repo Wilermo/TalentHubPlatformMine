@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cupón</title>
+</head>
+
+<body ng-app="cuponApp" ng-controller="cuponController">
+  <div class="row" id="login">
+    <div class="container">
+      <div class="row">
+        <div class="col col2">
+          <div class="contenido">
+            <img src="assets/talent_hub_l.svg" alt="">
+            <form (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="codigo" name="codigo">
+                <label for="exampleInputPassword1" class="form-label">Ingresa tu cupón</label>
+                <div *ngIf="showError" class="error-message">Campo requerido</div>
+              </div>
+              <button type="submit" class="btn btn-primary">Canjear Cupón</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -20,17 +20,17 @@
               <div class="contenido">
                 <h3>Inicio de sesión</h3>
                 <p>¿Ya reclutaste hoy? ¡Haz cada día una oportunidad para encontrar el mejor talento!</p>
-                <form (ngSubmit)="onSubmit()">
+                <form>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="usuario" name="usuario">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="username" name="usuario">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="contrasena" name="contrasena">
+                    <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="password" name="contrasena">
                     <div id="emailHelp" class="form-text align-left"> <a [routerLink]="['/forgot']">¿Olvidaste la contraseña?</a></div>
                   </div>
-                  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                  <button type="submit" class="btn btn-primary" (click)="iniciarSesion()">Iniciar Sesión</button>
                 </form>
               </div>
             </div>

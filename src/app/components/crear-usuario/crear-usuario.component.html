@@ -1,0 +1,57 @@
+<body class="background-container">
+    <div class="container mt-4">
+        <h2 class="text-left mb-4">Creación de usuario</h2>
+
+        <form class="custom-form" (ngSubmit)="enviarDatos()">
+            <!-- Campo desplegable para roles -->
+            <div class="form-group">
+                <label for="rol">Seleccionar Rol</label>
+                <select class="form-control" id="rol" [(ngModel)]="nuevoUsuario.role" name="rol">
+                    <option value="">Seleccione un rol</option>
+                    <option value="RECLUTAMIENTO">RECLUTAMIENTO</option>
+                    <option value="DESPIDO">DESPIDO</option>
+                    <option value="NOMINA_ELECTRONICA">NOMINA_ELECTRONICA</option>
+                    <option value="BI">BI</option>
+                    <option value="SST">SST</option>
+                </select>
+            </div>
+
+            <!-- Campos de datos personales -->
+            <div class="form-row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="correo">Correo para solicitar creación de usuario</label>
+                        <input type="email" class="form-control" id="correo" [(ngModel)]="nuevoUsuario.email "
+                            name="correo" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoUsuario.firstName"
+                            name="nombre" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" [(ngModel)]="nuevoUsuario.lastName"
+                            name="apellido" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-group mt-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" routerLink="/users" class="btn btn-secondary btn-lg">Atrás</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary btn-lg ml-auto">Enviar correo</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
