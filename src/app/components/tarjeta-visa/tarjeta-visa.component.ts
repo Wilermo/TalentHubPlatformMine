@@ -75,7 +75,13 @@ export class TarjetaVisaComponent implements OnInit {
       }
     });
   }
-
+  checkboxChanged(event: any) {
+    this.nuevaTarjeta.autoRenewal = event.target.checked;
+    
+    if (this.nuevaTarjeta.autoRenewal) {
+    } else {
+    }
+  }
 
 
   enviarDatos(): void {
