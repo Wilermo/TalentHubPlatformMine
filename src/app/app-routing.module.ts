@@ -8,7 +8,6 @@ import { UsersComponent } from './components/users/users.component';
 import { CompanyComponent } from './components/company/company.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { ModulesComponent } from './components/modules/modules.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.component';
 import { CambiarMPComponent } from './components/cambiar-mp/cambiar-mp.component';
 import { RegistrarHojaComponent } from './components/registrar-hoja/registrar-hoja.component';
@@ -22,6 +21,7 @@ import { ListaAspirantesComponent } from './components/lista-aspirantes/lista-as
 import { CausalesDespidoComponent } from './components/causales-despido/causales-despido.component';
 import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-salida.component';
 import { EditarEmpresaComponent } from './components/editar-empresa/editar-empresa.component';
+import { SlidebarComponent } from './components/slidebar/slidebar.component';
 
 
 const routes: Routes = [
@@ -30,10 +30,11 @@ const routes: Routes = [
   {path: 'reset-password', component:ResetPasswordComponent},
   {path: 'cambiar-plan', component:CambiarPlanComponent},
   {path: 'cambiar-mp', component:CambiarMPComponent},
+  {path: 'slidebar', component:SlidebarComponent},
 
   {
     path: '', // Utiliza una ruta vacía como prefijo para las rutas con Navbar
-    component: NavbarComponent, // Este componente actúa como un layout
+    component: SlidebarComponent, // Este componente actúa como un layout
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'company', component: CompanyComponent },

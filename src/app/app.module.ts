@@ -10,7 +10,6 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { CompanyComponent } from './components/company/company.component';
 import { UsersComponent } from './components/users/users.component';
 import { PaymentsComponent } from './components/payments/payments.component';
@@ -29,6 +28,7 @@ import { ListaAspirantesComponent } from './components/lista-aspirantes/lista-as
 import { CausalesDespidoComponent } from './components/causales-despido/causales-despido.component';
 import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-salida.component';
 import { EditarEmpresaComponent } from './components/editar-empresa/editar-empresa.component';
+import { SlidebarComponent } from './components/slidebar/slidebar.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,6 @@ import { EditarEmpresaComponent } from './components/editar-empresa/editar-empre
     ResetPasswordComponent,
     ForgotPasswordComponent,
     HomeComponent,
-    NavbarComponent,
     CompanyComponent,
     UsersComponent,
     PaymentsComponent,
@@ -55,6 +54,7 @@ import { EditarEmpresaComponent } from './components/editar-empresa/editar-empre
     CausalesDespidoComponent,
     ProgresoSalidaComponent,
     EditarEmpresaComponent,
+    SlidebarComponent
   ],
   imports: [
     BrowserModule,
