@@ -25,6 +25,8 @@ import { CuponComponent } from './components/cupon/cupon.component';
 import { TarjetaVisaComponent } from './components/tarjeta-visa/tarjeta-visa.component';
 import { CommonModule } from '@angular/common';
 import { ListaAspirantesComponent } from './components/lista-aspirantes/lista-aspirantes.component';
+import { CausalesDespidoComponent } from './components/causales-despido/causales-despido.component';
+import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-salida.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { ListaAspirantesComponent } from './components/lista-aspirantes/lista-as
     CrearCuentaComponent,
     CuponComponent,
     TarjetaVisaComponent,
-    ListaAspirantesComponent
+    ListaAspirantesComponent,
+    CausalesDespidoComponent,
+    ProgresoSalidaComponent,
   ],
   imports: [
     BrowserModule,

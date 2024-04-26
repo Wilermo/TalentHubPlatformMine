@@ -19,6 +19,8 @@ import { CuponComponent } from './components/cupon/cupon.component';
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 import { TarjetaVisaComponent } from './components/tarjeta-visa/tarjeta-visa.component';
 import { ListaAspirantesComponent } from './components/lista-aspirantes/lista-aspirantes.component';
+import { CausalesDespidoComponent } from './components/causales-despido/causales-despido.component';
+import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-salida.component';
 
 
 const routes: Routes = [
@@ -43,8 +45,10 @@ const routes: Routes = [
       { path: 'lista-aspirantes', component: ListaAspirantesComponent },
       { path: 'crear-usuario', component: CrearUsuarioComponent },
       { path: 'crear-cuenta', component: CrearCuentaComponent },
-      {path: 'cambiar-plan',component: CambiarPlanComponent},
+      { path: 'cambiar-plan',component: CambiarPlanComponent},
       { path: 'visa', component: TarjetaVisaComponent }
+      { path: 'causales-despido',component: CausalesDespidoComponent},
+      { path: 'progreso-salida', component: ProgresoSalidaComponent }
        // Ruta hija
       // Puedes añadir más rutas hijas que requieran Navbar aquí
     ]
