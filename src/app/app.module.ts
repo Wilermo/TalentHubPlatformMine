@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { CommonModule } from '@angular/common';
 import { ListaAspirantesComponent } from './components/lista-aspirantes/lista-aspirantes.component';
 import { CausalesDespidoComponent } from './components/causales-despido/causales-despido.component';
 import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-salida.component';
+import { EditarEmpresaComponent } from './components/editar-empresa/editar-empresa.component';
 
 @NgModule({
   declarations: [
@@ -52,13 +54,15 @@ import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-s
     ListaAspirantesComponent,
     CausalesDespidoComponent,
     ProgresoSalidaComponent,
+    EditarEmpresaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
