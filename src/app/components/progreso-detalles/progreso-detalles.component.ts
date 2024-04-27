@@ -106,8 +106,6 @@ export class ProgresoDetallesComponent implements OnInit {
     }
   }
 
-
-
   getCurrentStage(): string {
     const stages = ['Notificación', 'Documentación', 'Liquidación', 'Finalizado'];
     let lastCompletedStage = stages.find(stage => this.etapasCompletadas[stage as Stage]);

@@ -18,7 +18,7 @@
                 <button class="btn mt-3"
                     [ngClass]="{'btn-success': etapasCompletadas['Notificación'], 'btn-danger': !etapasCompletadas['Notificación']}"
                     (click)="toggleEtapa('Notificación')">
-                    {{ etapasCompletadas['Notificación'] ? 'Marcar Incompleto' : 'Marcar Completado' }}
+                    {{ etapasCompletadas['Notificación'] ? 'Incompleto' : 'Completado' }}
                 </button>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <button class="btn mt-3"
                     [ngClass]="{'btn-success': etapasCompletadas['Documentación'], 'btn-danger': !etapasCompletadas['Documentación']}"
                     (click)="toggleEtapa('Documentación')">
-                    {{ etapasCompletadas['Documentación'] ? 'Marcar Incompleto' : 'Marcar Completado' }}
+                    {{ etapasCompletadas['Documentación'] ? 'Incompleto' : 'Completado' }}
                 </button>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <button class="btn mt-3"
                     [ngClass]="{'btn-success': etapasCompletadas['Liquidación'], 'btn-danger': !etapasCompletadas['Liquidación']}"
                     (click)="toggleEtapa('Liquidación')">
-                    {{ etapasCompletadas['Liquidación'] ? 'Marcar Incompleto' : 'Marcar Completado' }}
+                    {{ etapasCompletadas['Liquidación'] ? 'Incompleto' : 'Completado' }}
                 </button>
             </div>
         </div>
