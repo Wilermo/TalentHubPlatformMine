@@ -39,21 +39,26 @@
 }
 
 .bg-success {
-    background-color: #28a745;
+    background-color: #346C73;
     /* Color verde para completado */
 }
 
 .bg-info {
-    background-color: #17a2b8;
+    background-color: #329AA6;
     /* Color azul para casi completado */
 }
 
 .bg-warning {
-    background-color: #ffc107;
+    background-color: #33A69A;
     /* Color amarillo para más de la mitad completado */
 }
 
 .bg-danger {
     background-color: #dc3545;
     /* Color rojo para menos de la mitad completado */
+}
+
+.bg-finish {
+    background-color: #2E5559;
+    /* Color verde para completado */
 }

@@ -83,7 +83,7 @@ export class EmpleadoService {
       case 'Liquidación':
         return 'bg-success';
       case 'Finalizado':
-        return 'bg-primary';
+        return 'bg-finish';
       default:
         return '';
     }
