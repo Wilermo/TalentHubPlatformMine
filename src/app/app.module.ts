@@ -31,8 +31,6 @@ import { EditarEmpresaComponent } from './components/editar-empresa/editar-empre
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,8 +57,6 @@ import { AspirantesComponent } from './components/aspirantes/aspirantes.componen
     EditarEmpresaComponent,
     SlidebarComponent,
     AspirantesComponent
-
-
   ],
   imports: [
     BrowserModule,

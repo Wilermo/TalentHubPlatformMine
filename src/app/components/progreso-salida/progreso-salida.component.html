@@ -1,63 +1,81 @@
 <body class="background-container">
     <div class="container mt-4">
-        <div class="row">
-            <div class="col">
-                <h2 class="text-left mb-4">Progreso de salida de empleados</h2>
-            </div>
-            <div class="col-auto">
-                <!-- Botón para registrar nuevo empleado -->
-                <button type="button" routerLink="/registrar-hoja" class="btn btn-custom ">Iniciar evento</button>
-            </div>
-        </div>
+        <h2 class="text-left mb-4">Progreso de salida de empleados</h2>
+        <!-- Botón para registrar nuevo evento -->
+        <button type="button" routerLink="/registrar-hoja" class="btn btn-primary mb-3">Iniciar evento</button>
+
         <!-- Filtros -->
         <div class="row mb-3">
+            <!-- Filtro por nombre -->
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="nombre">Filtrar por Nombre:</label>
-                    <input type="text" class="form-control" id="nombre">
+                    <input type="text" class="form-control" id="nombre" [(ngModel)]="filtroNombre"
+                        (ngModelChange)="onFiltroNombreChange($event)">
                 </div>
             </div>
+            <!-- Filtro por etapa -->
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="status">Filtrar por Etapa:</label>
-                    <select class="form-control" id="status">
-                        <option value="">Todos</option>
-                        <option value="etapaUno">Notificación</option>
-                        <option value="etapaDos">Documentación</option>
-                        <option value="etapaTres">Liquidación</option>
-                        <option value="etapaFinal">Finalizado</option>
+                    <label for="Etapa">Filtrar por Etapa:</label>
+                    <select class="form-control" id="Etapa" [(ngModel)]="filtroEtapa"
+                        (ngModelChange)="onFiltroEtapaChange($event)">
+                        <option value="">Todas las etapas</option>
+                        <option value="Notificación">Notificación</option>
+                        <option value="Documentación">Documentación</option>
+                        <option value="Liquidación">Liquidación</option>
+                        <option value="Finalizado">Finalizado</option>
                     </select>
                 </div>
             </div>
+            <!-- Filtro por causal -->
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="departamento">Filtrar por Causal:</label>
-                    <select class="form-control" id="departamento">
+                    <select class="form-control" id="departamento" [(ngModel)]="filtroCausal"
+                        (ngModelChange)="onFiltroCausalChange($event)">
                         <option value="">Todas las causales</option>
-                        <!-- Opciones de departamento se agregarán dinámicamente -->
+                        <!-- Opciones de causales se agregarán dinámicamente -->
                     </select>
                 </div>
             </div>
         </div>
 
-        <!-- Lista de empleados -->
+        <!-- Tabla de empleados con pipeline visual -->
         <div class="row">
             <div class="col-lg-12">
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Nombre</th>
-                            <th>Departamento</th>
-                            <th>Tipo de Contrato</th>
-                            <th>Salario</th>
-                            <th>Fecha de Inicio</th>
-                            <th>Status</th>
-                            <!-- Agregar más columnas si es necesario -->
+                            <th>Etapa</th>
+                            <th>Causal</th>
+                            <th>Progreso</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Filas de empleados se agregarán dinámicamente -->
+                        <tr *ngFor="let empleado of filteredEmpleados; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ empleado.nombre }}</td>
+                            <td>{{ empleado.status }}</td>
+                            <td>{{ empleado.causal }}</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar"
+                                        [ngStyle]="{'width': getProgressWidth(empleado.status)}"
+                                        [ngClass]="getProgressColor(empleado.status)" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        {{ getProgressValue(empleado.status) }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-info btn-sm">Ver detalles</button>
+                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

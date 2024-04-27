@@ -24,3 +24,36 @@
     border-color: #346C73;
     /* Cambia este valor al color deseado para el hover */
 }
+
+/* empleados.component.css */
+.progress-bar {
+    transition: width 0.6s ease;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.btn-sm {
+    margin-right: 5px;
+}
+
+.bg-success {
+    background-color: #28a745;
+    /* Color verde para completado */
+}
+
+.bg-info {
+    background-color: #17a2b8;
+    /* Color azul para casi completado */
+}
+
+.bg-warning {
+    background-color: #ffc107;
+    /* Color amarillo para más de la mitad completado */
+}
+
+.bg-danger {
+    background-color: #dc3545;
+    /* Color rojo para menos de la mitad completado */
+}
