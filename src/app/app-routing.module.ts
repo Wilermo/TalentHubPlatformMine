@@ -22,6 +22,7 @@ import { CausalesDespidoComponent } from './components/causales-despido/causales
 import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-salida.component';
 import { EditarEmpresaComponent } from './components/editar-empresa/editar-empresa.component';
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
+import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,7 @@ const routes: Routes = [
       { path: 'causales-despido',component: CausalesDespidoComponent},
       { path: 'progreso-salida', component: ProgresoSalidaComponent },
       { path: 'editar-empresa', component: EditarEmpresaComponent },
+      {path: 'aspirante', component: AspirantesComponent },
        // Ruta hija
       // Puedes añadir más rutas hijas que requieran Navbar aquí
     ]

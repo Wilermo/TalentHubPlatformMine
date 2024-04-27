@@ -1,0 +1,50 @@
+<div class="container-fluid shadow p-4 bg-white">
+    <div class="row mb-4 mt-4">
+        <div class="col">
+            <label for="status">Filtrar por Nombre:</label>
+            <input type="text" placeholder="search" class="form-control border-2 rounded-lg" #filter (keyup)="filterData(filter.value)">
+        </div>
+        <div class="col">
+            <label for="status">Filtrar por Convocatoria:</label>
+            <select class="form-control" id="status">
+                <option value="">Todos</option>
+                <option value="etapaUno">Notificación</option>
+                <option value="etapaDos">Documentación</option>
+                <option value="etapaTres">Liquidación</option>
+                <option value="etapaFinal">Finalizado</option>
+            </select>
+        </div>
+        <div class="col">
+            <label for="status"># filas:</label>
+            <select class="form-control border-2 rounded-lg" #pageSize (change)="changePageSize(pageSize.value)">
+                <option *ngFor="let size of pageSizes" [value]="size">{{size}}</option>
+            </select>
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="p-3 text-left">#</th>
+                <th class="p-3 text-left">Nombre</th>
+                <th class="p-3 text-left">Email</th>
+                <th class="p-3 text-left">Convocatoria</th>
+                <th class="p-3 text-left">Estado</th>
+                <th class="p-3 text-left">Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let supplier of visibleData(); let i=index">
+                <td class="p-3">{{i+1}}</td>
+                <td class="p-3">{{supplier.name}}</td>
+                <td class="p-3">{{supplier.email}}</td>
+                <td class="p-3">{{supplier.Convocatoria}}</td>
+                <td class="p-3">{{supplier.Estado}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="mt-4 d-flex justify-content-center botones">
+        <button class="mr-2 p-2 btn1 " style="width: 150px; height: 50px;" (click)="previousPage()">Previous</button>
+        <button  *ngFor="let pageNumber of pageNumbers(); let i = index"class="btn0 p-2" style="width: 50px; height: 50px;" [ngClass]="{'active': i+1 === currentPage}" (click)="changePage(i+1)">{{i+1}}</button>
+        <button class="ml-2 p-2 btn2"style="width: 150px; height: 50px;" (click)="nextPage()">Next</button>
+    </div>
+</div>

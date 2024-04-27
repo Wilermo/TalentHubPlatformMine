@@ -29,6 +29,9 @@ import { CausalesDespidoComponent } from './components/causales-despido/causales
 import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-salida.component';
 import { EditarEmpresaComponent } from './components/editar-empresa/editar-empresa.component';
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
+import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
+
+
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { SlidebarComponent } from './components/slidebar/slidebar.component';
     CausalesDespidoComponent,
     ProgresoSalidaComponent,
     EditarEmpresaComponent,
-    SlidebarComponent
+    SlidebarComponent,
+    AspirantesComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -62,9 +68,9 @@ import { SlidebarComponent } from './components/slidebar/slidebar.component';
     FormsModule,
     HttpClientModule,
     CommonModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, AspirantesComponent]
 })
 export class AppModule { }
