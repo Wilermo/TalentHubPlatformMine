@@ -30,6 +30,7 @@ import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-s
 import { EditarEmpresaComponent } from './components/editar-empresa/editar-empresa.component';
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
+import { ProgresoDetallesComponent } from './components/progreso-detalles/progreso-detalles.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { AspirantesComponent } from './components/aspirantes/aspirantes.componen
     ProgresoSalidaComponent,
     EditarEmpresaComponent,
     SlidebarComponent,
-    AspirantesComponent
+    AspirantesComponent,
+    ProgresoDetallesComponent,
   ],
   imports: [
     BrowserModule,

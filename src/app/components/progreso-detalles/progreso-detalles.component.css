@@ -1,0 +1,9 @@
+.card-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.card-body textarea {
+    height: 100px;
+    /* Ajustar según sea necesario */
+}

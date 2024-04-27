@@ -1,38 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EmpleadoService } from 'src/app/shared/model/empleado.service';
 import { Empleado } from 'src/app/shared/model/Entities/empleado';
 
 @Component({
   selector: 'app-progreso-salida',
   templateUrl: './progreso-salida.component.html',
-  styleUrl: './progreso-salida.component.css'
+  styleUrls: ['./progreso-salida.component.css']
 })
-export class ProgresoSalidaComponent {
-  empleados: Empleado[] = [
-    { id: 1, nombre: 'Juan Pérez', status: 'Notificación', causal: 'Reducción de personal', progreso: 25 },
-    { id: 2, nombre: 'Ana Gómez', status: 'Documentación', causal: 'Desempeño insuficiente', progreso: 50 },
-    { id: 3, nombre: 'Luis Ramos', status: 'Liquidación', causal: 'Cierre de departamento', progreso: 75 },
-    { id: 4, nombre: 'Sofía Castillo', status: 'Finalizado', causal: 'Mutuo acuerdo', progreso: 100 }
-  ];
-
+export class ProgresoSalidaComponent implements OnInit {
+  empleados: Empleado[] = [];
   filteredEmpleados: Empleado[] = [];
 
   filtroNombre: string = '';
   filtroEtapa: string = '';
   filtroCausal: string = '';
 
-  constructor() { }
+  constructor(private empleadoService: EmpleadoService) {}
 
   ngOnInit(): void {
+    this.empleados = this.empleadoService.getEmpleados();
     this.filteredEmpleados = this.empleados; // Inicialmente, todos los empleados son visibles
     this.applyFilters();
   }
 
   applyFilters(): void {
-    this.filteredEmpleados = this.empleados.filter(empleado => {
-      return (this.filtroNombre ? empleado.nombre.toLowerCase().includes(this.filtroNombre.toLowerCase()) : true)
-        && (this.filtroEtapa ? empleado.status === this.filtroEtapa : true)
-        && (this.filtroCausal ? empleado.causal === this.filtroCausal : true);
-    });
+    this.filteredEmpleados = this.empleadoService.filterEmpleados(this.filtroNombre, this.filtroEtapa, this.filtroCausal);
   }
 
   onFiltroNombreChange(value: string): void {
@@ -51,48 +43,14 @@ export class ProgresoSalidaComponent {
   }
 
   getProgressWidth(status: string): string {
-    switch (status) {
-        case 'Notificación':
-            return '25%';
-        case 'Documentación':
-            return '50%';
-        case 'Liquidación':
-            return '75%';
-        case 'Finalizado':
-            return '100%';
-        default:
-            return '0%';
-    }
-}
+    return this.empleadoService.getProgressWidth(status);
+  }
 
-getProgressColor(status: string): string {
-    switch (status) {
-        case 'Notificación':
-            return 'bg-info';
-        case 'Documentación':
-            return 'bg-warning';
-        case 'Liquidación':
-            return 'bg-success';
-        case 'Finalizado':
-            return 'bg-primary'; // o la clase de color personalizada si no deseas usar 'bg-primary'
-        default:
-            return '';
-    }
-}
+  getProgressColor(status: string): string {
+    return this.empleadoService.getProgressColor(status);
+  }
 
-getProgressValue(status: string): string {
-    switch (status) {
-        case 'Notificación':
-            return '25%';
-        case 'Documentación':
-            return '50%';
-        case 'Liquidación':
-            return '75%';
-        case 'Finalizado':
-            return 'Finalizado';
-        default:
-            return '';
-    }
+  getProgressValue(status: string): string {
+    return this.empleadoService.getProgressValue(status);
+  }
 }
-}
-
