@@ -31,8 +31,9 @@ export class RegistrarDespidoComponent implements OnInit {
       nombre: this.selectedEmpleado.nombre,
       status: 'Notificación', // La etapa inicial es siempre 'Notificación'
       causal: this.selectedCausal,
-      progreso: 25, // El progreso inicial es siempre 25%
-      // ... más propiedades según sea necesario
+      progreso: 25,
+      salario: 0,
+      documentos: []
     };
     this.empleadoService.addEmpleado(newEmpleado);
     this.router.navigate(['/progreso-salida']);

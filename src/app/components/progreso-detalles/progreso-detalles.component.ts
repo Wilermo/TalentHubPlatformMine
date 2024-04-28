@@ -13,6 +13,8 @@ type Stage = 'Notificación' | 'Documentación' | 'Liquidación';
 })
 export class ProgresoDetallesComponent implements OnInit {
   empleado: Empleado;
+  mensajeL: string = '';
+  mensajeN: string = '';
   etapasCompletadas: { [key in Stage]: boolean } = {
     'Notificación': false,
     'Documentación': false,
@@ -24,7 +26,7 @@ export class ProgresoDetallesComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {
-    this.empleado = new Empleado(0, '', '', '', 0, '', [], '');
+    this.empleado = new Empleado(0, '', '', '', 0, 0, '', [], '');
   }
 
   ngOnInit(): void {
@@ -47,6 +49,20 @@ export class ProgresoDetallesComponent implements OnInit {
   toggleEtapa(etapa: Stage): void {
     // Alternar el estado de completitud de la etapa
     this.etapasCompletadas[etapa] = !this.etapasCompletadas[etapa];
+
+    if (etapa === 'Notificación') {
+      if (this.etapasCompletadas['Notificación']) {
+        // Si se marca Notificación como completado, enviar correo
+        this.enviarCorreo();
+      }
+    }
+
+    if (etapa === 'Liquidación') {
+      if (this.etapasCompletadas['Liquidación']) {
+        // Si se marca Notificación como completado, enviar correo
+        this.calcularLiquidacion();
+      }
+    }
 
     if (etapa === 'Notificación' && !this.etapasCompletadas['Notificación']) {
       // Si Notificación se marca como incompleto, hacer que las etapas subsiguientes también se marquen como incompletas
@@ -130,11 +146,27 @@ export class ProgresoDetallesComponent implements OnInit {
   }
 
   guardarCambios(): void {
-    // Aquí puedes añadir cualquier lógica adicional para guardar los cambios
-    // Por ejemplo, guardar en una base de datos o realizar alguna verificación
-
-    // Navegación a la ruta deseada
     this.router.navigate(['/progreso-salida']);
   }
 
+  enviarCorreo(): void {
+    if (this.empleado) {
+      this.mensajeN = this.empleadoService.enviarCorreo(this.empleado.id);
+    }
+  }
+
+
+  subirDocumento(event: Event): void {
+    const element = event.target as HTMLInputElement; // Aseguramos el tipo correcto
+    const files = element.files; // Ahora puedes acceder a .files
+    if (this.empleado && files && files.length > 0) {
+      this.empleadoService.subirDocumento(files, this.empleado.id);
+    }
+  }
+
+  calcularLiquidacion(): void {
+    if (this.empleado) {
+      this.mensajeL = this.empleadoService.calcularLiquidacion(this.empleado.id);
+    }
+  }
 }

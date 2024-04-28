@@ -1,4 +1,14 @@
-/* Estilos personalizados para el formulario */
+.background-container {
+    background-color: #E3E3E3;
+    /* Color de fondo */
+    padding: 20px;
+    /* Espaciado interno */
+    border: 2px solid #E3E3E3;
+    /* Borde */
+    border-radius: 10px;
+    /* Permitir desplazamiento horizontal */
+}
+
 .custom-form .form-row {
     margin-bottom: 15px;
 }

@@ -6,10 +6,10 @@ import { Empleado } from '../model/Entities/empleado';
 })
 export class EmpleadoService {
   private empleados: Empleado[] = [
-    new Empleado(1, 'Juan Pérez', 'Notificación', 'Reducción de personal', 25, '', [], 'Ana Sánchez'),
-    new Empleado(2, 'Ana Gómez', 'Documentación', 'Desempeño insuficiente', 50, '', [], 'Luis Rodríguez'),
-    new Empleado(3, 'Luis Ramos', 'Liquidación', 'Cierre de departamento', 75, '', [], 'Carmen Ortiz'),
-    new Empleado(4, 'Sofía Castillo', 'Finalizado', 'Mutuo acuerdo', 100, '', [], 'Juan Martín')
+    new Empleado(1, 'Juan Pérez', 'Notificación', 'Reducción de personal', 25, 25000, '', [], 'Ana Sánchez'),
+    new Empleado(2, 'Ana Gómez', 'Documentación', 'Desempeño insuficiente', 50, 50000, '', [], 'Luis Rodríguez'),
+    new Empleado(3, 'Luis Ramos', 'Liquidación', 'Cierre de departamento', 75, 75000, '', [], 'Carmen Ortiz'),
+    new Empleado(4, 'Sofía Castillo', 'Finalizado', 'Mutuo acuerdo', 100, 100000, '', [], 'Juan Martín')
   ];
 
   constructor() { }
@@ -115,5 +115,36 @@ export class EmpleadoService {
 
   addEmpleado(empleado: Empleado): void {
     this.empleados.push(empleado);
+  }
+
+  enviarCorreo(id: number): string {
+    const empleado = this.getEmpleadoById(id);
+    if (empleado) {
+      return `Correo enviado a ${empleado.nombre} con motivo: ${empleado.razonDespido}`;
+    }
+    return 'Error: Empleado no encontrado';
+  }
+
+  subirDocumento(files: FileList, empleadoId: number): void {
+    const empleado = this.getEmpleadoById(empleadoId);
+    if (empleado && files.length > 0) {
+      if (!empleado.documentos) {
+        empleado.documentos = [];
+      }
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        empleado.documentos.push({ nombre: file.name, url: 'http://localhost/fake-url/' + file.name });
+      }
+    }
+  }
+
+
+  calcularLiquidacion(id: number): string {
+    const empleado = this.getEmpleadoById(id);
+    if (empleado) {
+      let liquidacion = empleado.salario * 33.5; // Cálculo simplificado de la liquidación
+      return `Liquidación calculada para ${empleado.nombre}: $${liquidacion}`;
+    }
+    return 'Error: Empleado no encontrado';
   }
 }

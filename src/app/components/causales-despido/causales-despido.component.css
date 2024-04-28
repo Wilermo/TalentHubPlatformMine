@@ -7,13 +7,7 @@
     border: 2px solid #E3E3E3;
     /* Borde */
     border-radius: 10px;
-    /* Esquinas redondeadas */
-    margin: auto;
-    /* Centrado horizontal */
-    width: 90%;
-    /* Ancho del contenedor */
-    max-width: 1200px;
-    /* Máximo ancho del contenedor */
+    /* Permitir desplazamiento horizontal */
 }
 
 .btn-custom {

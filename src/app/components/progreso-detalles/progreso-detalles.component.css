@@ -1,4 +1,14 @@
-/* Estilo general del contenedor */
+.background-container {
+    background-color: #E3E3E3;
+    /* Color de fondo */
+    padding: 20px;
+    /* Espaciado interno */
+    border: 2px solid #E3E3E3;
+    /* Borde */
+    border-radius: 10px;
+    /* Permitir desplazamiento horizontal */
+}
+
 .container {
     background-color: #f8f9fa;
     /* Color de fondo claro */
@@ -56,7 +66,7 @@
 .btn-primary {
     background-color: #33A69A;
     /* Verde, siguiendo la convención de 'Guardar' como acción positiva */
-    border-color: #346C73;
+    border-color: #33A69A;
     margin-top: 20px;
     width: auto
 }

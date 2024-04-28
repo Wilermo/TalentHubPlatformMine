@@ -1,51 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { EmpresaService } from 'src/app/shared/model/empresa.service';
 
 @Component({
   selector: 'app-editar-empresa',
-
   templateUrl: './editar-empresa.component.html',
-  styleUrl: './editar-empresa.component.css'
+  styleUrls: ['./editar-empresa.component.css']
 })
 export class EditarEmpresaComponent implements OnInit {
   editForm!: FormGroup;
   isLoading = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private empresaService: EmpresaService) { }
 
   ngOnInit() {
-    // Inicializar el FormGroup utilizando FormBuilder.
     this.editForm = this.fb.group({
       companyName: ['', [Validators.required, Validators.minLength(3)]],
+      representative: ['', Validators.required],
+      employeesNumber: ['', [Validators.required, Validators.min(1)]],
+      phone: ['', [Validators.required, Validators.pattern(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/)]],
+      email: ['', [Validators.required, Validators.email]],
       location: ['', Validators.required],
-      industry: ['', Validators.required],
-      website: ['', Validators.pattern('https?://.+')]
+      website: [''],
     });
 
-    // Simular la carga de datos existentes.
     this.loadData();
   }
 
   loadData() {
-    const existingData = {
-      companyName: 'Ejemplo S.A.',
-      location: 'Madrid',
-      industry: 'Tecnología',
-      website: 'http://www.ejemplo.com'
-    };
+    // Aquí, podrías llamar a un método del servicio para obtener los datos.
+    const existingData = this.empresaService.getEmpresaInfo();
     this.editForm.patchValue(existingData);
   }
 
   onSubmit() {
     if (this.editForm.valid) {
       this.isLoading = true;
-      console.log('Datos enviados:', this.editForm.value);
-      setTimeout(() => {
+      this.empresaService.updateEmpresaInfo(this.editForm.value).then(() => {
         this.isLoading = false;
         alert('Datos actualizados exitosamente!');
-      }, 2000);  // Simula una respuesta de actualización exitosa
+      });
     } else {
       console.error('El formulario no es válido');
     }
   }
+
 }
