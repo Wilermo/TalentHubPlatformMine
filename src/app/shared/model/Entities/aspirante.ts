@@ -1,6 +1,13 @@
-export class aspirante {
-    public name: string ='';
-    public email: string = '';
-    public Convocatoria: string= '';
-    public Estado: string= ''
+export interface aspirante {
+    id?: number; 
+    identification: string;
+    firstname: string;
+    surname: string;
+    email: string;
+    university: string;
+    offer: string;
+    status: string;
+    employmentExchange?: string;
+    nameEmergencyContact: string;
+    emergencyContact: string;
 }

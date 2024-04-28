@@ -30,6 +30,12 @@ import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-s
 import { EditarEmpresaComponent } from './components/editar-empresa/editar-empresa.component';
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AgregarAspirantesComponent } from './components/agregar-aspirantes/agregar-aspirantes.component';
+import { MaterialModule } from './material.module';
+import { DetallesAspiranteComponent } from './components/detalles-aspirante/detalles-aspirante.component';
+import { EditarAspiranteComponent } from './components/editar-aspirante/editar-aspirante.component';
+
 
 
 
@@ -58,7 +64,9 @@ import { AspirantesComponent } from './components/aspirantes/aspirantes.componen
     ProgresoSalidaComponent,
     EditarEmpresaComponent,
     SlidebarComponent,
-    AspirantesComponent
+    AgregarAspirantesComponent,
+    DetallesAspiranteComponent,
+    EditarAspiranteComponent
 
 
   ],
@@ -68,9 +76,12 @@ import { AspirantesComponent } from './components/aspirantes/aspirantes.componen
     FormsModule,
     HttpClientModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
-  providers: [],
-  bootstrap: [AppComponent, AspirantesComponent]
+  providers: [
+    provideAnimationsAsync()
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -160,3 +160,7 @@ a.sidebar-link:hover {
     margin-left: auto; /* Mover el logo al lado derecho */
     margin-right: 20px; /* Espacio entre el logo y el contenido */
 }
+.contenido{
+    background-image: url(src/assets/img_cambiarPlan.svg);
+    background-size: cover;
+}

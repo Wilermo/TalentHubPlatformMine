@@ -1,50 +1,121 @@
-<div class="container-fluid shadow p-4 bg-white">
-    <div class="row mb-4 mt-4">
-        <div class="col">
-            <label for="status">Filtrar por Nombre:</label>
-            <input type="text" placeholder="search" class="form-control border-2 rounded-lg" #filter (keyup)="filterData(filter.value)">
-        </div>
-        <div class="col">
-            <label for="status">Filtrar por Convocatoria:</label>
-            <select class="form-control" id="status">
-                <option value="">Todos</option>
-                <option value="etapaUno">Notificación</option>
-                <option value="etapaDos">Documentación</option>
-                <option value="etapaTres">Liquidación</option>
-                <option value="etapaFinal">Finalizado</option>
-            </select>
-        </div>
-        <div class="col">
-            <label for="status"># filas:</label>
-            <select class="form-control border-2 rounded-lg" #pageSize (change)="changePageSize(pageSize.value)">
-                <option *ngFor="let size of pageSizes" [value]="size">{{size}}</option>
-            </select>
-        </div>
+<div >
+  <div class="header-container">
+    <h1>ASPIRANTES</h1>
+  </div>
+  
+  <div class="align-center">
+    
+    <div class="d-inline-block mr-3 example-button-row">
+      <button (click)="routAgregar()" >
+        <i class="bi bi-person-fill-add mr-2" style="font-size: 1.5rem; color: #388089;" ></i>
+        Agregar
+      </button>
     </div>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th class="p-3 text-left">#</th>
-                <th class="p-3 text-left">Nombre</th>
-                <th class="p-3 text-left">Email</th>
-                <th class="p-3 text-left">Convocatoria</th>
-                <th class="p-3 text-left">Estado</th>
-                <th class="p-3 text-left">Acción</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let supplier of visibleData(); let i=index">
-                <td class="p-3">{{i+1}}</td>
-                <td class="p-3">{{supplier.name}}</td>
-                <td class="p-3">{{supplier.email}}</td>
-                <td class="p-3">{{supplier.Convocatoria}}</td>
-                <td class="p-3">{{supplier.Estado}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="mt-4 d-flex justify-content-center botones">
-        <button class="mr-2 p-2 btn1 " style="width: 150px; height: 50px;" (click)="previousPage()">Previous</button>
-        <button  *ngFor="let pageNumber of pageNumbers(); let i = index"class="btn0 p-2" style="width: 50px; height: 50px;" [ngClass]="{'active': i+1 === currentPage}" (click)="changePage(i+1)">{{i+1}}</button>
-        <button class="ml-2 p-2 btn2"style="width: 150px; height: 50px;" (click)="nextPage()">Next</button>
+    <div class="d-inline-block mr-3">
+      <mat-form-field appearance="fill">
+        <mat-label>Filtrar por Nombre</mat-label>
+        <input matInput placeholder="search" autocomplete="off" (keyup)="filterData($event)">
+      </mat-form-field>
     </div>
+  
+    <div class="d-inline-block mr-3">
+      <mat-form-field appearance="fill">
+        <mat-label>Filtrar por Convocatoria</mat-label>
+        <mat-select (selectionChange)="onChange($event)">
+          <mat-option value="">Todos</mat-option>
+          <mat-option value="Inicio Proceso">Inicio Proceso</mat-option>
+          <mat-option value="Entrevistas">Entrevistas</mat-option>
+          <mat-option value="Pruebas técnicas">Pruebas técnicas</mat-option>
+          <mat-option value="Pruebas psicotécnicas">Pruebas psicotécnicas</mat-option>
+          <mat-option value="Pruebas médicas">Pruebas médicas</mat-option>
+          <mat-option value="Contratado">Contratado</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div class="d-inline-block mr-3">
+      <mat-form-field appearance="fill">
+        <mat-label>Filtrar por Estado</mat-label>
+        <mat-select (selectionChange)="onChange($event)">
+          <mat-option value="">Todos</mat-option>
+          <mat-option value="Entrevistas">Entrevistas</mat-option>
+          <mat-option value="Contratado">Contratado</mat-option>
+          <mat-option value="Pruebas psicotécnicas">Pruebas psicotécnicas</mat-option>
+          <mat-option value="Pruebas médicas">Pruebas médicas</mat-option>
+          <mat-option value="Pruebas técnicas">Pruebas técnicas</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    
+  </div>
+  
+  
+  
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+         class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="identification">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+        Cedula.
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.identification}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+        Nombre
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+        Email
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="offer">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by offer">
+        Offer
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.offer}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by status">
+        Status
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Action
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <a  (click)="Openpopup(element)">
+          <i class="bi bi-search" style="font-size: 1.5rem; color: #388089;"></i>
+        </a>
+        <a (click)="editpopup(element)" style="margin-left: 15px;">
+          <i class="bi bi-pen" style="font-size: 1.5rem; color: #388089;"></i>
+        </a>
+        <a (click)="edit(element)" style="margin-left: 15px;">
+          <i class="bi bi-trash" style="font-size: 1.5rem; color: #388089;"></i>
+        </a>
+      </td>
+      
+     
+      
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+
+
 </div>
+  
