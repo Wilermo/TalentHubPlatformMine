@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DetallesAspiranteComponent } from '../detalles-aspirante/detalles-aspirante.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EditarAspiranteComponent } from '../editar-aspirante/editar-aspirante.component';
-
+import { ComunicacionAspService } from 'src/app/shared/model/comunicacion-asp.service';
 
 @Component({
   selector: 'app-aspirantes',
@@ -29,7 +29,7 @@ export class AspirantesComponent implements AfterViewInit {
   apiResponse: any = [];
   statusFilterValue: string = ''; // Agrega una variable para almacenar el valor del filtro de status
   constructor(private router: Router, private _liveAnnouncer: LiveAnnouncer, 
-    private aspiranteService: AspiranteService, private dialog: MatDialog,private snackBar: MatSnackBar) { }
+    private aspiranteService: AspiranteService, private dialog: MatDialog,private snackBar: MatSnackBar,private aspiranteEditService:ComunicacionAspService) { }
   displayedColumns: string[] = ['identification', 'firstname', 'email', 'offer', 'status', 'action'];
   dataSource = new MatTableDataSource<aspirante>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -44,8 +44,20 @@ export class AspirantesComponent implements AfterViewInit {
     })
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.aspiranteEditService.onAspiranteEdit().subscribe(() => {
+      // Actualiza los datos de la tabla
+      this.refreshTableData();
+    });
   }
 
+  refreshTableData() {
+    this.aspiranteService.getAspirantes().subscribe((response: any) => {
+      this.apiResponse = response;
+      this.dataSource = new MatTableDataSource(response);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
+  }
   announceSortChange(sortState: Sort) {
     if (sortState.active) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);

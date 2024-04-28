@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AspiranteService } from 'src/app/shared/model/aspirante.service';
 import { BehaviorSubject } from 'rxjs';
+import { ComunicacionAspService } from 'src/app/shared/model/comunicacion-asp.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class EditarAspiranteComponent {
   editForm!: FormGroup;
   closemessage = 'closed using directive'
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<EditarAspiranteComponent>, private formBuilder: FormBuilder,
-    private service: AspiranteService) {
+    private service: AspiranteService, private aspiranteEditService:ComunicacionAspService) {
 
   }
   ngOnInit(): void {
@@ -60,10 +61,8 @@ export class EditarAspiranteComponent {
           console.log('Aspirante editado exitosamente');
           this.ref.close('Aspirante editado exitosamente');
     
-         
-          this.service.getAspirantes().subscribe(aspirantes => {
-            this.tablaDataSubject.next(aspirantes);
-          });
+          this.aspiranteEditService.notifyAspiranteEdit();
+          
         },
         error => {
           console.error('Error al editar aspirante:', error);
