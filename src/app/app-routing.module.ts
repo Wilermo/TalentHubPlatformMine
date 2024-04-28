@@ -30,6 +30,7 @@ import { RegistrarCausalComponent } from './components/registrar-causal/registra
 import { EditarCausalComponent } from './components/editar-causal/editar-causal.component';
 import { RegistrarDespidoComponent } from './components/registrar-despido/registrar-despido.component';
 import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
+import { AgregarConvocatoriaComponent } from './components/agregar-convocatoria/agregar-convocatoria.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -65,7 +66,8 @@ const routes: Routes = [
       { path: 'editar-causal/:id', component: EditarCausalComponent },
       { path: 'registrar-despido', component: RegistrarDespidoComponent },
       { path: 'agregar-aspirante', component: AgregarAspirantesComponent},
-      { path: 'convocatoria', component: ConvocatoriaComponent}
+      { path: 'convocatoria', component: ConvocatoriaComponent},
+      { path: 'agregar-convocatoria', component: AgregarConvocatoriaComponent}
 
       // Ruta hija
       // Puedes añadir más rutas hijas que requieran Navbar aquí

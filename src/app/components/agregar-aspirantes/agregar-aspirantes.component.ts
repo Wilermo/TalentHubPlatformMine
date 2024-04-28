@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AspiranteService } from 'src/app/shared/model/aspirante.service';
 import { aspirante } from 'src/app/shared/model/Entities/aspirante';
-
+import { ConvocatoriaService } from 'src/app/shared/model/convocatoria.service';
+import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
 @Component({
   selector: 'app-agregar-aspirantes',
   templateUrl: './agregar-aspirantes.component.html',
@@ -10,9 +11,10 @@ import { aspirante } from 'src/app/shared/model/Entities/aspirante';
 })
 export class AgregarAspirantesComponent {
   estados = ['Inicial'];
-  ofertas = ['Sistemas', 'Marketing', 'Industrial', 'Civil'];
+  ofertas: string[] = [];
 
-  constructor(private builder: FormBuilder, private aspiranteService: AspiranteService) {}
+  constructor(private builder: FormBuilder, private aspiranteService: AspiranteService,
+  private convocatoriaService: ConvocatoriaService) {}
 
   ngOnInit(): void {
     this.customerform.setValue({
@@ -26,6 +28,7 @@ export class AgregarAspirantesComponent {
       emergencyContact: 'add1',
       nameEmergencyContact: 'add1'
     });
+    this.loadOfertas();
   }
 
   customerform = this.builder.group({
@@ -70,5 +73,16 @@ export class AgregarAspirantesComponent {
 
   clearform() {
     this.customerform.reset();
+  }
+  loadOfertas(): void {
+    this.convocatoriaService.getConvocatorias().subscribe(
+      (convocatorias: convocatoria[]) => {
+        // Mapeamos las convocatorias para obtener solo los títulos de las ofertas
+        this.ofertas = convocatorias.map(convocatoria => convocatoria.tittleOffer);
+      },
+      error => {
+        console.error('Error al cargar las ofertas:', error);
+      }
+    );
   }
 }
