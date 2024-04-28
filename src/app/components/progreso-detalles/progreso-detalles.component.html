@@ -1,7 +1,8 @@
 <div class="container mt-4">
     <h2>Detalles del Progreso de Despido</h2>
-    <h4>Empleado: {{ empleado.nombre }}</h4>
-    <h4>A cargo: {{ empleado.nombrePersonaCargo }}</h4>
+    <h4 class="empleado-detalle">Empleado: {{ empleado.nombre }}</h4>
+    <h4 class="empleado-detalle">A cargo: {{ empleado.nombrePersonaCargo }}</h4>
+
 
     <!-- Etapas como cards de Bootstrap -->
     <div class="card-deck">
@@ -18,7 +19,7 @@
                 <button class="btn mt-3"
                     [ngClass]="{'btn-success': etapasCompletadas['Notificación'], 'btn-danger': !etapasCompletadas['Notificación']}"
                     (click)="toggleEtapa('Notificación')">
-                    {{ etapasCompletadas['Notificación'] ? 'Incompleto' : 'Completado' }}
+                    {{ etapasCompletadas['Notificación'] ? 'Completo' : 'Incompletado' }}
                 </button>
             </div>
         </div>
@@ -33,7 +34,7 @@
                 <button class="btn mt-3"
                     [ngClass]="{'btn-success': etapasCompletadas['Documentación'], 'btn-danger': !etapasCompletadas['Documentación']}"
                     (click)="toggleEtapa('Documentación')">
-                    {{ etapasCompletadas['Documentación'] ? 'Incompleto' : 'Completado' }}
+                    {{ etapasCompletadas['Documentación'] ? 'Completo' : 'Incompletado' }}
                 </button>
             </div>
         </div>
@@ -48,9 +49,15 @@
                 <button class="btn mt-3"
                     [ngClass]="{'btn-success': etapasCompletadas['Liquidación'], 'btn-danger': !etapasCompletadas['Liquidación']}"
                     (click)="toggleEtapa('Liquidación')">
-                    {{ etapasCompletadas['Liquidación'] ? 'Incompleto' : 'Completado' }}
+                    {{ etapasCompletadas['Liquidación'] ? 'Completo' : 'Incompletado' }}
                 </button>
             </div>
         </div>
     </div>
+    <!-- Botón para guardar cambios -->
+    <!-- Contenedor para el botón de guardar cambios -->
+    <div class="boton-guardar-container">
+        <button class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
+    </div>
+
 </div>

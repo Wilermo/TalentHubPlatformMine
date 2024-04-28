@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EmpleadoService } from 'src/app/shared/model/empleado.service';
 import { Empleado } from 'src/app/shared/model/Entities/empleado';
+import { Router } from '@angular/router';
 
 type Stage = 'Notificación' | 'Documentación' | 'Liquidación';
 
@@ -20,7 +21,8 @@ export class ProgresoDetallesComponent implements OnInit {
 
   constructor(
     private empleadoService: EmpleadoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.empleado = new Empleado(0, '', '', '', 0, '', [], '');
   }
@@ -127,6 +129,12 @@ export class ProgresoDetallesComponent implements OnInit {
     return this.empleado.progreso >= etapaProgress[etapa];
   }
 
+  guardarCambios(): void {
+    // Aquí puedes añadir cualquier lógica adicional para guardar los cambios
+    // Por ejemplo, guardar en una base de datos o realizar alguna verificación
 
+    // Navegación a la ruta deseada
+    this.router.navigate(['/progreso-salida']);
+  }
 
 }
