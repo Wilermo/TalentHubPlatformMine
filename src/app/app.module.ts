@@ -31,6 +31,8 @@ import { EditarEmpresaComponent } from './components/editar-empresa/editar-empre
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
 import { ProgresoDetallesComponent } from './components/progreso-detalles/progreso-detalles.component';
+import { RegistrarCausalComponent } from './components/registrar-causal/registrar-causal.component';
+import { EditarCausalComponent } from './components/editar-causal/editar-causal.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { ProgresoDetallesComponent } from './components/progreso-detalles/progre
     SlidebarComponent,
     AspirantesComponent,
     ProgresoDetallesComponent,
+    RegistrarCausalComponent,
+    EditarCausalComponent,
   ],
   imports: [
     BrowserModule,

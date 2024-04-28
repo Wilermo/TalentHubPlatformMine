@@ -24,15 +24,17 @@ import { EditarEmpresaComponent } from './components/editar-empresa/editar-empre
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
 import { ProgresoDetallesComponent } from './components/progreso-detalles/progreso-detalles.component';
+import { RegistrarCausalComponent } from './components/registrar-causal/registrar-causal.component';
+import { EditarCausalComponent } from './components/editar-causal/editar-causal.component';
 
 
 const routes: Routes = [
-  {path: '', component:LoginComponent},
-  {path: 'forgot', component:ForgotPasswordComponent},
-  {path: 'reset-password', component:ResetPasswordComponent},
-  {path: 'cambiar-plan', component:CambiarPlanComponent},
-  {path: 'cambiar-mp', component:CambiarMPComponent},
-  {path: 'slidebar', component:SlidebarComponent},
+  { path: '', component: LoginComponent },
+  { path: 'forgot', component: ForgotPasswordComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'cambiar-plan', component: CambiarPlanComponent },
+  { path: 'cambiar-mp', component: CambiarMPComponent },
+  { path: 'slidebar', component: SlidebarComponent },
 
   {
     path: '', // Utiliza una ruta vacía como prefijo para las rutas con Navbar
@@ -43,24 +45,26 @@ const routes: Routes = [
       { path: 'users', component: UsersComponent },
       { path: 'payments', component: PaymentsComponent },
       { path: 'modules', component: ModulesComponent },
-      { path: 'payment-info', component: PaymentInfoComponent},
+      { path: 'payment-info', component: PaymentInfoComponent },
       { path: 'registrar-hoja', component: RegistrarHojaComponent },
       { path: 'lista-nomina', component: ListaNominaComponent },
       { path: 'lista-aspirantes', component: ListaAspirantesComponent },
       { path: 'crear-usuario', component: CrearUsuarioComponent },
       { path: 'crear-cuenta', component: CrearCuentaComponent },
-      { path: 'cambiar-plan',component: CambiarPlanComponent},
+      { path: 'cambiar-plan', component: CambiarPlanComponent },
       { path: 'visa', component: TarjetaVisaComponent },
-      { path: 'causales-despido',component: CausalesDespidoComponent},
+      { path: 'causales-despido', component: CausalesDespidoComponent },
       { path: 'progreso-salida', component: ProgresoSalidaComponent },
       { path: 'editar-empresa', component: EditarEmpresaComponent },
       { path: 'aspirante', component: AspirantesComponent },
       { path: 'progreso-detalles/:id', component: ProgresoDetallesComponent },
-       // Ruta hija
+      { path: 'registrar-causal', component: RegistrarCausalComponent },
+      { path: 'editar-causal/:id', component: EditarCausalComponent },
+      // Ruta hija
       // Puedes añadir más rutas hijas que requieran Navbar aquí
     ]
   },
- {path: 'cupon', component: CuponComponent },
+  { path: 'cupon', component: CuponComponent },
   { path: '**', redirectTo: '' }
 ];
 
