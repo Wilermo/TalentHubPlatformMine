@@ -1,0 +1,63 @@
+<div class="container mt-4">
+    <h2>Detalles del Progreso de Despido</h2>
+    <h4 class="empleado-detalle">Empleado: {{ empleado.nombre }}</h4>
+    <h4 class="empleado-detalle">A cargo: {{ empleado.nombrePersonaCargo }}</h4>
+
+
+    <!-- Etapas como cards de Bootstrap -->
+    <div class="card-deck">
+        <!-- Notificación -->
+        <div class="card mb-3" *ngIf="debeMostrarEtapa('Notificación')">
+            <div class="card-header">
+                Notificación
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Detalle de la Notificación</h5>
+                <textarea class="form-control" [(ngModel)]="empleado.razonDespido"
+                    placeholder="Ingrese la razón del despido"
+                    [disabled]="etapasCompletadas['Notificación']"></textarea>
+                <button class="btn mt-3"
+                    [ngClass]="{'btn-success': etapasCompletadas['Notificación'], 'btn-danger': !etapasCompletadas['Notificación']}"
+                    (click)="toggleEtapa('Notificación')">
+                    {{ etapasCompletadas['Notificación'] ? 'Completo' : 'Incompletado' }}
+                </button>
+            </div>
+        </div>
+
+        <!-- Documentación -->
+        <div class="card mb-3" *ngIf="debeMostrarEtapa('Documentación')">
+            <div class="card-header">
+                Documentación
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Subir Documentos</h5>
+                <button class="btn mt-3"
+                    [ngClass]="{'btn-success': etapasCompletadas['Documentación'], 'btn-danger': !etapasCompletadas['Documentación']}"
+                    (click)="toggleEtapa('Documentación')">
+                    {{ etapasCompletadas['Documentación'] ? 'Completo' : 'Incompletado' }}
+                </button>
+            </div>
+        </div>
+
+        <!-- Liquidación -->
+        <div class="card mb-3" *ngIf="debeMostrarEtapa('Liquidación')">
+            <div class="card-header">
+                Liquidación
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Detalle de la Liquidación</h5>
+                <button class="btn mt-3"
+                    [ngClass]="{'btn-success': etapasCompletadas['Liquidación'], 'btn-danger': !etapasCompletadas['Liquidación']}"
+                    (click)="toggleEtapa('Liquidación')">
+                    {{ etapasCompletadas['Liquidación'] ? 'Completo' : 'Incompletado' }}
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Botón para guardar cambios -->
+    <!-- Contenedor para el botón de guardar cambios -->
+    <div class="boton-guardar-container">
+        <button class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
+    </div>
+
+</div>

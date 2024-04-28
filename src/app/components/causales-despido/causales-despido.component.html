@@ -1,65 +1,60 @@
-<body class="background-container">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- causales-despido.component.html -->
+<div class="background-container">
     <div class="container mt-4">
         <div class="row">
             <div class="col">
-                <h2 class="text-left mb-4">Causales de despidos</h2>
+                <h2 class="text-left mb-2">Causales de despidos</h2>
             </div>
             <div class="col-auto">
                 <!-- Botón para registrar nuevo empleado -->
-                <button type="button" routerLink="/registrar-hoja" class="btn btn-custom ">Registrar
-                    causal</button>
+                <button type="button" routerLink="/registrar-causal" class="btn btn-custom ">Registrar causal</button>
             </div>
         </div>
-        <!-- Filtros -->
         <div class="row mb-3">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="nombre">Filtrar por Nombre:</label>
-                    <input type="text" class="form-control" id="nombre">
+                    <label for="filtroNombre">Filtrar por Causal:</label>
+                    <input type="text" class="form-control" id="filtroNombre" [(ngModel)]="filtroNombre"
+                        (input)="filtrarCausales()" placeholder="Escriba la causal a filtrar...">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="status">Filtrar por Status:</label>
-                    <select class="form-control" id="status">
-                        <option value="">Todos</option>
-                        <option value="activo">Activo</option>
-                        <option value="inactivo">Inactivo</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="departamento">Filtrar por Departamento:</label>
-                    <select class="form-control" id="departamento">
-                        <option value="">Todos los departamentos</option>
-                        <!-- Opciones de departamento se agregarán dinámicamente -->
-                    </select>
+                    <label for="filtroCreador">Filtrar por Encargado de Creación:</label>
+                    <input type="text" class="form-control" id="filtroCreador" [(ngModel)]="filtroCreador"
+                        (input)="filtrarCausales()" placeholder="Escriba el encargado a filtrar...">
                 </div>
             </div>
         </div>
-
-        <!-- Lista de empleados -->
         <div class="row">
-            <div class="col-lg-12">
-                <table class="table">
+            <div class="col-12">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nombre</th>
-                            <th>Departamento</th>
-                            <th>Tipo de Contrato</th>
-                            <th>Salario</th>
-                            <th>Fecha de Inicio</th>
-                            <th>Status</th>
-                            <!-- Agregar más columnas si es necesario -->
+                            <th>Causal</th>
+                            <th>Descripción</th>
+                            <th>Creado por</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Filas de empleados se agregarán dinámicamente -->
+                        <tr *ngFor="let causal of causalesFiltradas; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ causal.causal }}</td>
+                            <td>{{ causal.descripcion }}</td>
+                            <td>{{ causal.creador }}</td>
+                            <td>
+                                <button class="btn btn-custom-search btn-sm mr-2" (click)="editarCausal(causal.id)"><i
+                                        class="fas fa-search"></i></button>
+                                <button class="btn btn-danger btn-sm" (click)="eliminarCausal(causal.id)"><i
+                                        class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-</body>
+</div>

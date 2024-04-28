@@ -36,8 +36,10 @@ import { MaterialModule } from './material.module';
 import { DetallesAspiranteComponent } from './components/detalles-aspirante/detalles-aspirante.component';
 import { EditarAspiranteComponent } from './components/editar-aspirante/editar-aspirante.component';
 
-
-
+import { ProgresoDetallesComponent } from './components/progreso-detalles/progreso-detalles.component';
+import { RegistrarCausalComponent } from './components/registrar-causal/registrar-causal.component';
+import { EditarCausalComponent } from './components/editar-causal/editar-causal.component';
+import { RegistrarDespidoComponent } from './components/registrar-despido/registrar-despido.component';
 
 @NgModule({
   declarations: [
@@ -66,9 +68,11 @@ import { EditarAspiranteComponent } from './components/editar-aspirante/editar-a
     SlidebarComponent,
     AgregarAspirantesComponent,
     DetallesAspiranteComponent,
-    EditarAspiranteComponent
-
-
+    EditarAspiranteComponent,
+    ProgresoDetallesComponent,
+    RegistrarCausalComponent,
+    EditarCausalComponent,
+    RegistrarDespidoComponent,
   ],
   imports: [
     BrowserModule,
