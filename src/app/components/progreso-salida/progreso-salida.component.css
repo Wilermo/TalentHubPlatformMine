@@ -38,27 +38,52 @@
     margin-right: 5px;
 }
 
-.bg-success {
-    background-color: #346C73;
-    /* Color verde para completado */
-}
-
-.bg-info {
-    background-color: #329AA6;
-    /* Color azul para casi completado */
-}
-
-.bg-warning {
-    background-color: #33A69A;
-    /* Color amarillo para más de la mitad completado */
-}
-
 .bg-danger {
     background-color: #dc3545;
-    /* Color rojo para menos de la mitad completado */
 }
 
-.bg-finish {
+.bg-notification {
+    background-color: #329AA6;
+    /* Reemplaza con el código de color deseado */
+}
+
+.bg-documentacion {
+    background-color: #33A69A;
+    /* Reemplaza con el código de color deseado */
+}
+
+.bg-liquidacion {
+    background-color: #346C73;
+    /* Reemplaza con el código de color deseado */
+}
+
+.bg-finalizado {
     background-color: #2E5559;
-    /* Color verde para completado */
+    /* Reemplaza con el código de color deseado */
+}
+
+
+.btn-custom-search {
+    background-color: #33A69A;
+    /* Color de fondo deseado */
+    border-color: #33A69A;
+    /* Borde del botón */
+    color: #fff;
+    /* Color del texto */
+}
+
+.btn-custom-search:hover {
+    background-color: #346C73;
+    /* Color al pasar el mouse */
+    border-color: #346C73;
+    /* Borde al pasar el mouse */
+}
+
+.search-button .lupa-icon {
+    margin-left: 5px;
+    /* Espacio entre el texto y el icono */
+    background-color: #33A69A;
+    /* Color de fondo deseado */
+    color: #fff;
+    /* Color del icono de lupa */
 }

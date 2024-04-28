@@ -33,6 +33,7 @@ import { AspirantesComponent } from './components/aspirantes/aspirantes.componen
 import { ProgresoDetallesComponent } from './components/progreso-detalles/progreso-detalles.component';
 import { RegistrarCausalComponent } from './components/registrar-causal/registrar-causal.component';
 import { EditarCausalComponent } from './components/editar-causal/editar-causal.component';
+import { RegistrarDespidoComponent } from './components/registrar-despido/registrar-despido.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { EditarCausalComponent } from './components/editar-causal/editar-causal.
     ProgresoDetallesComponent,
     RegistrarCausalComponent,
     EditarCausalComponent,
+    RegistrarDespidoComponent,
   ],
   imports: [
     BrowserModule,

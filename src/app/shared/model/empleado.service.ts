@@ -77,13 +77,13 @@ export class EmpleadoService {
   getProgressColor(status: string): string {
     switch (status) {
       case 'Notificación':
-        return 'bg-info';
+        return 'bg-notification';
       case 'Documentación':
-        return 'bg-warning';
+        return 'bg-documentacion';
       case 'Liquidación':
-        return 'bg-success';
+        return 'bg-liquidacion';
       case 'Finalizado':
-        return 'bg-finish';
+        return 'bg-finalizado';
       default:
         return '';
     }
@@ -107,5 +107,13 @@ export class EmpleadoService {
     let indexEtapaActual = etapasOrdenadas.indexOf(empleado.status);
     let index = etapasOrdenadas.indexOf(etapa);
     return index <= indexEtapaActual + 1; // Show only the current stage and the immediate next stage
+  }
+
+  deleteEmpleadoById(id: number): void {
+    this.empleados = this.empleados.filter(empleado => empleado.id !== id);
+  }
+
+  addEmpleado(empleado: Empleado): void {
+    this.empleados.push(empleado);
   }
 }

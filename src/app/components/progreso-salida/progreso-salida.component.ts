@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpleadoService } from 'src/app/shared/model/empleado.service';
 import { Empleado } from 'src/app/shared/model/Entities/empleado';
+import { CausalService } from 'src/app/shared/model/causal.service';
 
 @Component({
   selector: 'app-progreso-salida',
@@ -14,12 +15,14 @@ export class ProgresoSalidaComponent implements OnInit {
   filtroNombre: string = '';
   filtroEtapa: string = '';
   filtroCausal: string = '';
+  causales: string[] = []; // Lista de causales disponibles
 
-  constructor(private empleadoService: EmpleadoService) {}
+  constructor(private empleadoService: EmpleadoService, private causalService: CausalService) { }
 
   ngOnInit(): void {
     this.empleados = this.empleadoService.getEmpleados();
     this.filteredEmpleados = this.empleados; // Inicialmente, todos los empleados son visibles
+    this.causales = this.causalService.obtenerCausales().map(causal => causal.causal);
     this.applyFilters();
   }
 
@@ -52,5 +55,12 @@ export class ProgresoSalidaComponent implements OnInit {
 
   getProgressValue(status: string): string {
     return this.empleadoService.getProgressValue(status);
+  }
+
+  onDeleteEmpleado(id: number): void {
+    if (confirm('¿Estás seguro de querer eliminar este proceso de salida?')) {
+      this.empleadoService.deleteEmpleadoById(id);
+      this.applyFilters();  // Refrescar la lista filtrada después de la eliminación
+    }
   }
 }
