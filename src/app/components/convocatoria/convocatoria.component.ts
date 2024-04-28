@@ -3,8 +3,8 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { AspiranteService } from 'src/app/shared/model/aspirante.service';
-import { aspirante } from 'src/app/shared/model/Entities/aspirante';
+import { ConvocatoriaService } from 'src/app/shared/model/convocatoria.service';
+import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -12,31 +12,31 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
 import { MatDialog } from '@angular/material/dialog';
-import { DetallesAspiranteComponent } from '../detalles-aspirante/detalles-aspirante.component';
+import { DetallesConvocatoriaComponent } from '../detalles-convocatoria/detalles-convocatoria.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EditarAspiranteComponent } from '../editar-aspirante/editar-aspirante.component';
+import { EditarConvocatoriaComponent } from '../editar-convocatoria/editar-convocatoria.component';
 import { ComunicacionAspService } from 'src/app/shared/model/comunicacion-asp.service';
 
 @Component({
-  selector: 'app-aspirantes',
+  selector: 'app-convocatoria',
   standalone: true,
   imports: [MatTableModule, MatSortModule, MatPaginatorModule, FormsModule, MatInputModule, MatSelectModule, MatIconModule],
-  templateUrl: './aspirantes.component.html',
-  styleUrl: './aspirantes.component.css',
+  templateUrl: './convocatoria.component.html',
+  styleUrl: './convocatoria.component.css'
 })
-export class AspirantesComponent implements AfterViewInit {
+export class ConvocatoriaComponent implements AfterViewInit {
   nombreFilterValue: string = '';
   apiResponse: any = [];
   statusFilterValue: string = ''; // Agrega una variable para almacenar el valor del filtro de status
   constructor(private router: Router, private _liveAnnouncer: LiveAnnouncer, 
-    private aspiranteService: AspiranteService, private dialog: MatDialog,private snackBar: MatSnackBar,private aspiranteEditService:ComunicacionAspService) { }
-  displayedColumns: string[] = ['identification', 'firstname', 'email', 'offer', 'status', 'action'];
-  dataSource = new MatTableDataSource<aspirante>;
+    private convocatoriaService: ConvocatoriaService, private dialog: MatDialog,private snackBar: MatSnackBar,private aspiranteEditService:ComunicacionAspService) { }
+  displayedColumns: string[] = ['tittleOffer', 'publishDate', 'experience', 'status', 'action'];
+  dataSource = new MatTableDataSource<convocatoria>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit() {
-    this.aspiranteService.getAspirantes().subscribe((response: any) => {
+    this.convocatoriaService.getConvocatorias().subscribe((response: any) => {
       this.apiResponse = response;
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
@@ -51,7 +51,7 @@ export class AspirantesComponent implements AfterViewInit {
   }
 
   refreshTableData() {
-    this.aspiranteService.getAspirantes().subscribe((response: any) => {
+    this.convocatoriaService.getConvocatorias().subscribe((response: any) => {
       this.apiResponse = response;
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
@@ -86,14 +86,14 @@ export class AspirantesComponent implements AfterViewInit {
     this.dataSource.filter = $event.target.value;
   }
 
-  edit(element: aspirante) {
-    const index = this.apiResponse.findIndex((item: aspirante) => item === element);
+  edit(element: convocatoria) {
+    const index = this.apiResponse.findIndex((item: convocatoria) => item === element);
     if (index !== -1) {
-      this.apiResponse[index].status = 'Rechazado';
+      this.apiResponse[index].status = 'Cerrada';
       if (element.id !== undefined) {
-        this.aspiranteService.editAspirante(element.id, 'Rechazado').subscribe(
+        this.convocatoriaService.editConvocatoria(element.id, 'Cerrada').subscribe(
           response => {
-            console.log('Aspirante editado con éxito');
+            console.log('Convocatoria editado con éxito');
             this.showSuccessMessage();
           },
           error => {
@@ -102,7 +102,7 @@ export class AspirantesComponent implements AfterViewInit {
           }
         );
       } else {
-        console.error('El ID del aspirante es undefined');
+        console.error('El ID de la convocatoria es undefined');
       }
       this.dataSource = new MatTableDataSource(this.apiResponse);
       this.dataSource.paginator = this.paginator;
@@ -111,7 +111,7 @@ export class AspirantesComponent implements AfterViewInit {
   }
   
   showSuccessMessage() {
-    this.snackBar.open('El estado se cambió a Rechazado con éxito', 'Cerrar', {
+    this.snackBar.open('El estado se cambió a Cerrado con éxito', 'Cerrar', {
       duration: 3000, 
       verticalPosition: 'top' 
     });
@@ -119,31 +119,31 @@ export class AspirantesComponent implements AfterViewInit {
   
 
   routAgregar() {
-    this.router.navigate(['/agregar-aspirante']);
+    this.router.navigate(['/agregar-convocatoria']);
   }
 
-  Openpopup(aspirante: aspirante) {
-    const dialogRef = this.dialog.open(DetallesAspiranteComponent, {
+  Openpopup(convocatoria: convocatoria) {
+    const dialogRef = this.dialog.open(DetallesConvocatoriaComponent, {
 
-      data: { aspirante: aspirante } // Pasa el objeto aspirante al popup
+      data: { convocatoria: convocatoria } 
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Popup cerrado');
     });
   }
-  editpopup(aspirante: aspirante) {
-    console.log('Datos del aspirante:', aspirante);
-    const dialogRef = this.dialog.open(EditarAspiranteComponent, {
-      data: { aspirante: aspirante } // Pasa el objeto aspirante al popup
+  editpopup(convocatoria: convocatoria) {
+    console.log('Datos de la convocatoria:', convocatoria);
+    const dialogRef = this.dialog.open(EditarConvocatoriaComponent, {
+      data: { aspirante: convocatoria } 
     });
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('Popup cerrado');
-      // Aquí puedes manejar cualquier lógica después de cerrar el diálogo, si es necesario
     });
   }
 }
+
 
 
 
