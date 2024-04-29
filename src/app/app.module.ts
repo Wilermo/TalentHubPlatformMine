@@ -31,7 +31,7 @@ import { AgregarAspirantesComponent } from './components/agregar-aspirantes/agre
 import { MaterialModule } from './material.module';
 import { DetallesAspiranteComponent } from './components/detalles-aspirante/detalles-aspirante.component';
 import { EditarAspiranteComponent } from './components/editar-aspirante/editar-aspirante.component';
-
+import { WorkingComponent } from './components/working/working.component';
 import { ProgresoDetallesComponent } from './components/progreso-detalles/progreso-detalles.component';
 import { RegistrarCausalComponent } from './components/registrar-causal/registrar-causal.component';
 import { EditarCausalComponent } from './components/editar-causal/editar-causal.component';
@@ -70,7 +70,8 @@ import { EditarConvocatoriaComponent } from './components/editar-convocatoria/ed
     RegistrarDespidoComponent,
     AgregarConvocatoriaComponent,
     DetallesConvocatoriaComponent,
-    EditarConvocatoriaComponent
+    EditarConvocatoriaComponent,
+    WorkingComponent
   ],
   imports: [
     BrowserModule,

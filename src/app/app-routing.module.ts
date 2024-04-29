@@ -27,11 +27,12 @@ import { RegistrarDespidoComponent } from './components/registrar-despido/regist
 import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
 import { AgregarConvocatoriaComponent } from './components/agregar-convocatoria/agregar-convocatoria.component';
 import { AuthGuard } from './shared/auth/auth.guard';
+import { WorkingComponent } from './components/working/working.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'forgot', component: ForgotPasswordComponent },
-
+  { path: 'working', component: WorkingComponent},
   {
     path: '', // Utiliza una ruta vacía como prefijo para las rutas con Navbar
     component: SlidebarComponent, // Este componente actúa como un layout
