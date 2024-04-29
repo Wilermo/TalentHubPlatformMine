@@ -4,6 +4,7 @@ import { AspiranteService } from 'src/app/shared/model/service/aspirante.service
 import { aspirante } from 'src/app/shared/model/Entities/aspirante';
 import { ConvocatoriaService } from 'src/app/shared/model/service/convocatoria.service';
 import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-agregar-aspirantes',
   templateUrl: './agregar-aspirantes.component.html',
@@ -14,7 +15,7 @@ export class AgregarAspirantesComponent {
   ofertas: string[] = [];
 
   constructor(private builder: FormBuilder, private aspiranteService: AspiranteService,
-  private convocatoriaService: ConvocatoriaService) {}
+  private convocatoriaService: ConvocatoriaService,private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.customerform.setValue({
@@ -59,7 +60,7 @@ export class AgregarAspirantesComponent {
       this.aspiranteService.agregarAspirante(aspiranteData).subscribe(
         response => {
           console.log('Aspirante agregado correctamente:', response);
-          this.clearform();
+          this.showSuccessMessage();
         },
         error => {
           
@@ -84,5 +85,11 @@ export class AgregarAspirantesComponent {
         console.error('Error al cargar las ofertas:', error);
       }
     );
+  }
+  showSuccessMessage() {
+    this.snackBar.open('La convocatoria se agregó con éxito', 'Cerrar', {
+      duration: 3000, 
+      verticalPosition: 'top' 
+    });
   }
 }
