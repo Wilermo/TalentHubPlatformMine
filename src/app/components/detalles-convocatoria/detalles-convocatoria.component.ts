@@ -1,7 +1,7 @@
 import { Component , Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { ConvocatoriaService } from 'src/app/shared/model/convocatoria.service'; // Importa el servicio de aspirante si no lo has hecho aún
+import { ConvocatoriaService } from 'src/app/shared/model/service/convocatoria.service'; // Importa el servicio de aspirante si no lo has hecho aún
 import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
 
 @Component({

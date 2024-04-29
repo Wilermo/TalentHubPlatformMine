@@ -6,14 +6,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
-import { CompanyComponent } from './components/company/company.component';
 import { UsersComponent } from './components/users/users.component';
 import { PaymentsComponent } from './components/payments/payments.component';
-import { ModulesComponent } from './components/modules/modules.component';
 import { GestionarCuentaComponent } from './components/gestionar-cuenta/gestionar-cuenta.component';
 import { CambiarMPComponent } from './components/cambiar-mp/cambiar-mp.component';
 import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.component';
@@ -24,7 +21,6 @@ import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.com
 import { CuponComponent } from './components/cupon/cupon.component';
 import { TarjetaVisaComponent } from './components/tarjeta-visa/tarjeta-visa.component';
 import { CommonModule } from '@angular/common';
-import { ListaAspirantesComponent } from './components/lista-aspirantes/lista-aspirantes.component';
 import { CausalesDespidoComponent } from './components/causales-despido/causales-despido.component';
 import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-salida.component';
 import { EditarEmpresaComponent } from './components/editar-empresa/editar-empresa.component';
@@ -35,7 +31,7 @@ import { AgregarAspirantesComponent } from './components/agregar-aspirantes/agre
 import { MaterialModule } from './material.module';
 import { DetallesAspiranteComponent } from './components/detalles-aspirante/detalles-aspirante.component';
 import { EditarAspiranteComponent } from './components/editar-aspirante/editar-aspirante.component';
-
+import { WorkingComponent } from './components/working/working.component';
 import { ProgresoDetallesComponent } from './components/progreso-detalles/progreso-detalles.component';
 import { RegistrarCausalComponent } from './components/registrar-causal/registrar-causal.component';
 import { EditarCausalComponent } from './components/editar-causal/editar-causal.component';
@@ -48,13 +44,10 @@ import { EditarConvocatoriaComponent } from './components/editar-convocatoria/ed
   declarations: [
     AppComponent,
     LoginComponent,
-    ResetPasswordComponent,
     ForgotPasswordComponent,
     HomeComponent,
-    CompanyComponent,
     UsersComponent,
     PaymentsComponent,
-    ModulesComponent,
     GestionarCuentaComponent,
     CambiarMPComponent,
     CambiarPlanComponent,
@@ -64,7 +57,6 @@ import { EditarConvocatoriaComponent } from './components/editar-convocatoria/ed
     CrearCuentaComponent,
     CuponComponent,
     TarjetaVisaComponent,
-    ListaAspirantesComponent,
     CausalesDespidoComponent,
     ProgresoSalidaComponent,
     EditarEmpresaComponent,
@@ -78,7 +70,8 @@ import { EditarConvocatoriaComponent } from './components/editar-convocatoria/ed
     RegistrarDespidoComponent,
     AgregarConvocatoriaComponent,
     DetallesConvocatoriaComponent,
-    EditarConvocatoriaComponent
+    EditarConvocatoriaComponent,
+    WorkingComponent
   ],
   imports: [
     BrowserModule,

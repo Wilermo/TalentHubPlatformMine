@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../../../app/service/auth.service';
-import { UtilService } from '../../../app/service/util.service';
+import { AuthService } from '../../shared/model/service/auth.service';
+import { UtilService } from '../../shared/model/service/util.service';
 
 @Component({
   selector: 'app-login',
@@ -56,7 +56,7 @@ export class LoginComponent {
           if (rol === 'ADMIN, default-roles-talentsoft') {
             this.router.navigate(['/home']);
           } if (rol !== 'ADMIN, default-roles-talentsoft') {
-            this.router.navigate(['/modules']);
+            this.router.navigate(['/home']);
           }
         },
         (error: any) => {

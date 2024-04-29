@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Causal } from 'src/app/shared/model/Entities/causal';
 import { Router } from '@angular/router';
-import { CausalService } from 'src/app/shared/model/causal.service';
+import { CausalService } from 'src/app/shared/model/service/causal.service';
 
 @Component({
   selector: 'app-causales-despido',

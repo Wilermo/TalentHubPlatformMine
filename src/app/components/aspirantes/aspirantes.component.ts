@@ -3,7 +3,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { AspiranteService } from 'src/app/shared/model/aspirante.service';
+import { AspiranteService } from 'src/app/shared/model/service/aspirante.service';
 import { aspirante } from 'src/app/shared/model/Entities/aspirante';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DetallesAspiranteComponent } from '../detalles-aspirante/detalles-aspirante.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EditarAspiranteComponent } from '../editar-aspirante/editar-aspirante.component';
-import { ComunicacionAspService } from 'src/app/shared/model/comunicacion-asp.service';
+import { ComunicacionAspService } from 'src/app/shared/model/service/comunicacion-asp.service';
 
 @Component({
   selector: 'app-aspirantes',

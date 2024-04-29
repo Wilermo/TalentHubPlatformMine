@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ConvocatoriaService } from 'src/app/shared/model/convocatoria.service';
+import { ConvocatoriaService } from 'src/app/shared/model/service/convocatoria.service';
 import { BehaviorSubject } from 'rxjs';
-import { ComunicacionAspService } from 'src/app/shared/model/comunicacion-asp.service';
+import { ComunicacionAspService } from 'src/app/shared/model/service/comunicacion-asp.service';
 
 
 @Component({

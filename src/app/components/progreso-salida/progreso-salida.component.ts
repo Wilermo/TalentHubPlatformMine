@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EmpleadoService } from 'src/app/shared/model/empleado.service';
+import { EmpleadoService } from 'src/app/shared/model/service/empleado.service';
 import { Empleado } from 'src/app/shared/model/Entities/empleado';
-import { CausalService } from 'src/app/shared/model/causal.service';
+import { CausalService } from 'src/app/shared/model/service/causal.service';
 
 @Component({
   selector: 'app-progreso-salida',

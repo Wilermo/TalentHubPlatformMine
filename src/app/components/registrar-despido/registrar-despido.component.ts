@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Empleado } from 'src/app/shared/model/Entities/empleado';
-import { CausalService } from 'src/app/shared/model/causal.service';
-import { EmpleadoService } from 'src/app/shared/model/empleado.service';
+import { CausalService } from 'src/app/shared/model/service/causal.service';
+import { EmpleadoService } from 'src/app/shared/model/service/empleado.service';
 import { Router } from '@angular/router';
 
 @Component({

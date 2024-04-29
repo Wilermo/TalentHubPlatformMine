@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Causal } from 'src/app/shared/model/Entities/causal';
-import { CausalService } from 'src/app/shared/model/causal.service';  // Asumiendo que la ruta es correcta
+import { CausalService } from 'src/app/shared/model/service/causal.service';  // Asumiendo que la ruta es correcta
 
 @Component({
   selector: 'app-registrar-causal',
