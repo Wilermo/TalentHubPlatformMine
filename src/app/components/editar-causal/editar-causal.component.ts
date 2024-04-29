@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Causal } from 'src/app/shared/model/Entities/causal';
-import { CausalService } from 'src/app/shared/model/causal.service';
-import { AuthService } from 'src/app/service/auth.service'; // Importa el servicio de autenticación
+import { CausalService } from 'src/app/shared/model/service/causal.service';
+import { AuthService } from 'src/app/shared/model/service/auth.service'; // Importa el servicio de autenticación
 
 @Component({
   selector: 'app-editar-causal',

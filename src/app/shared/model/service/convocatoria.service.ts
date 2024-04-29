@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {convocatoria} from './Entities/convocatoria';
+import {convocatoria} from '../Entities/convocatoria';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 

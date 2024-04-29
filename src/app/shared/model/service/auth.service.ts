@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthenticationRequest } from '../shared/model/auth/aut.req';
-import { TokenResponse } from '../shared/model/auth/token';
-import { environment } from '../../environments/environment';
+import { AuthenticationRequest } from '../auth/aut.req';
+import { TokenResponse } from '../auth/token';
+import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../shared/model/auth/user';
+import { User } from '../auth/user';
 import { tap } from 'rxjs/operators';
-import { encrypt } from '../utils/encrypt';
+import { encrypt } from '../../../utils/encrypt';
 
 @Injectable({
   providedIn: 'root',

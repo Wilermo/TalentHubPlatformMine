@@ -3,7 +3,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { ConvocatoriaService } from 'src/app/shared/model/convocatoria.service';
+import { ConvocatoriaService } from 'src/app/shared/model/service/convocatoria.service';
 import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DetallesConvocatoriaComponent } from '../detalles-convocatoria/detalles-convocatoria.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EditarConvocatoriaComponent } from '../editar-convocatoria/editar-convocatoria.component';
-import { ComunicacionAspService } from 'src/app/shared/model/comunicacion-asp.service';
+import { ComunicacionAspService } from 'src/app/shared/model/service/comunicacion-asp.service';
 
 @Component({
   selector: 'app-convocatoria',

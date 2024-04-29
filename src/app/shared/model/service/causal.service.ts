@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Causal } from './Entities/causal';
+import { Causal } from '../Entities/causal';
 @Injectable({
   providedIn: 'root'
 })

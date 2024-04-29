@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ConvocatoriaService } from 'src/app/shared/model/convocatoria.service';
+import { ConvocatoriaService } from 'src/app/shared/model/service/convocatoria.service';
 import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
 import { MatSnackBar } from '@angular/material/snack-bar';
 

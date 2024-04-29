@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarService } from 'src/app/shared/model/sidebar.service';
+import { SidebarService } from 'src/app/shared/model/service/sidebar.service';
 
 @Component({
   selector: 'app-slidebar',
@@ -12,6 +12,7 @@ export class SlidebarComponent implements OnInit {
   constructor(private sidebarService: SidebarService) { }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('role'));
     const hamBurger = document.querySelector(".toggle-btn") as HTMLElement;
 
     hamBurger.addEventListener("click", () => {
@@ -39,4 +40,15 @@ export class SlidebarComponent implements OnInit {
       }
     );
   }
+  logout(): void {
+    localStorage.clear()
+  }
+  role=localStorage.getItem('role');
+
+  showRecruitmentCard: boolean = this.role!.includes('RECLUTAMIENTO')|| this.role!.includes('ADMIN') ;
+  showDismissalCard: boolean = this.role!.includes('DESPIDO')|| this.role!.includes('ADMIN') ;
+  showSSTCard: boolean = this.role!.includes('SST') || this.role!.includes('ADMIN') ;
+  showBICard: boolean = this.role!.includes('BI')|| this.role!.includes('ADMIN') ;
+  showNominaCard: boolean = this.role!.includes('NOMINA')|| this.role!.includes('ADMIN') ;
+  showAdminCard:boolean = this.role!.includes('ADMIN')|| this.role!.includes('ADMIN') ;
 }

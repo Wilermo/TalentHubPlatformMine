@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AspiranteService } from 'src/app/shared/model/aspirante.service';
+import { AspiranteService } from 'src/app/shared/model/service/aspirante.service';
 import { aspirante } from 'src/app/shared/model/Entities/aspirante';
-import { ConvocatoriaService } from 'src/app/shared/model/convocatoria.service';
+import { ConvocatoriaService } from 'src/app/shared/model/service/convocatoria.service';
 import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
 @Component({
   selector: 'app-agregar-aspirantes',
