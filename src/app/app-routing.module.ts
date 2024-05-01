@@ -59,7 +59,7 @@ const routes: Routes = [
       { path: 'agregar-convocatoria', component: AgregarConvocatoriaComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN', 'RECLUTAMIENTO'] } },
       { path: 'cambiar-mp', component: CambiarMPComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN'] } },
       { path: 'cupon', component: CuponComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN'] } },
-      { path: 'editar-perfil', component: EditarPerfilComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN', 'SST', 'NOMINA_ELECTRONICA', 'DESPIDO', 'RECLUTAMIENTO', 'BI'] } },
+      { path: 'editar-perfil', component: EditarPerfilComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN', 'SST', 'NOMINA_ELECTRONICA', 'DESPIDO', 'RECLUTAMIENTO', 'BI'] } }
 
       // Ruta hija
       // Puedes añadir más rutas hijas que requieran Navbar aquí

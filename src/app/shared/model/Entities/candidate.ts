@@ -5,4 +5,5 @@ export interface candidate {
     phoneNumber: string;
     status: string;
     offer_id: number;
+    currriculumId?: number;
 }

@@ -41,6 +41,9 @@ import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.
 import { DateFormatPipe } from 'src/app/date-format.pipe';
 import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
 import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
+import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { contrato } from './shared/model/Entities/contrato';
+import { ContratoComponent } from './components/contrato/contrato.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +79,9 @@ import { AspirantesComponent } from './components/aspirantes/aspirantes.componen
     EditarPerfilComponent,
     ConvocatoriaComponent,
     DateFormatPipe,
-    AspirantesComponent
+    AspirantesComponent,
+    CurriculumComponent,
+    ContratoComponent
   ],
   imports: [
     BrowserModule,

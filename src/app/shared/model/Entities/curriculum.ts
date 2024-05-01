@@ -9,5 +9,4 @@ export interface curriculum {
     personalReference:string;
     university: string;
     carrer: string;
-    candidate_id:number;
 }
