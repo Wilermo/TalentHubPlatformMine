@@ -15,14 +15,8 @@ export class Empleado {
 /*
 export class Empleado {
   constructor(
-    public id: number,
-    public nombre: string,
-    public status: string,
-    public causal: string,
-    public progreso: number,
-    public salario: number,
+    public id?: number,
     public contrato_id: number,
-    public nombrePersonaCargo?: string
   ) { }
 }
 */
