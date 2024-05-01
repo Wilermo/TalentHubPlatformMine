@@ -11,3 +11,18 @@ export class Empleado {
     public nombrePersonaCargo?: string
   ) { }
 }
+
+/*
+export class Empleado {
+  constructor(
+    public id: number,
+    public nombre: string,
+    public status: string,
+    public causal: string,
+    public progreso: number,
+    public salario: number,
+    public contrato_id: number,
+    public nombrePersonaCargo?: string
+  ) { }
+}
+*/

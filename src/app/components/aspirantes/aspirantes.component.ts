@@ -72,7 +72,7 @@ export class AspirantesComponent implements AfterViewInit {
   loadOfferTitles() {
     this.apiResponse.forEach((candidate: candidate) => {
       this.offerService.getoffer(candidate.offer_id).subscribe((offer: offer) => {
-        this.offersMap.set(candidate.offer_id, offer.tittleOffer); // Store offer title in map
+        this.offersMap.set(candidate.offer_id, offer.tittleOffer); 
       });
     });
   }
