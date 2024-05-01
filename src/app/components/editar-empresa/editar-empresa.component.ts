@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { EmpresaService } from 'src/app/shared/model/empresa.service';
+import { EmpresaService } from 'src/app/shared/model/service/empresa.service';
 
 @Component({
   selector: 'app-editar-empresa',

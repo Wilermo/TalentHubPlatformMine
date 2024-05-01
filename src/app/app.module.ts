@@ -39,6 +39,7 @@ import { RegistrarDespidoComponent } from './components/registrar-despido/regist
 import { AgregarConvocatoriaComponent } from './components/agregar-convocatoria/agregar-convocatoria.component';
 import { DetallesConvocatoriaComponent } from './components/detalles-convocatoria/detalles-convocatoria.component';
 import { EditarConvocatoriaComponent } from './components/editar-convocatoria/editar-convocatoria.component';
+import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { EditarConvocatoriaComponent } from './components/editar-convocatoria/ed
     AgregarConvocatoriaComponent,
     DetallesConvocatoriaComponent,
     EditarConvocatoriaComponent,
-    WorkingComponent
+    WorkingComponent,
+    EditarPerfilComponent,
   ],
   imports: [
     BrowserModule,
