@@ -8,6 +8,10 @@ export class Empleado {
     public salario: number,
     public razonDespido?: string,
     public documentos: any[] = [],  // Inicializado como un arreglo vacío por defecto
-    public nombrePersonaCargo?: string
+    public nombrePersonaCargo?: string,  // Razón opcional para despido
+    public departamento?: string,
+    public tipoContrato?: string,
+    public fechaInicio?: Date,
+    public novedad?: string,
   ) { }
 }
