@@ -10,7 +10,6 @@ import { CambiarMPComponent } from './components/cambiar-mp/cambiar-mp.component
 import { RegistrarHojaComponent } from './components/registrar-hoja/registrar-hoja.component';
 import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
-import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 import { CuponComponent } from './components/cupon/cupon.component';
 import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 import { TarjetaVisaComponent } from './components/tarjeta-visa/tarjeta-visa.component';
@@ -45,7 +44,6 @@ const routes: Routes = [
       { path: 'registrar-hoja', component: RegistrarHojaComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN', 'RECLUTAMIENTO'] } },
       { path: 'lista-nomina', component: ListaNominaComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN', 'NOMINA_ELECTRONICA'] } },
       { path: 'crear-usuario', component: CrearUsuarioComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN'] } },
-      { path: 'crear-cuenta', component: CrearCuentaComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN'] } },
       { path: 'cambiar-plan', component: CambiarPlanComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN'] } },
       { path: 'visa', component: TarjetaVisaComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN'] } },
       { path: 'causales-despido', component: CausalesDespidoComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN', 'DESPIDO'] } },

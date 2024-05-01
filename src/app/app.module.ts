@@ -17,7 +17,6 @@ import { CambiarPlanComponent } from './components/cambiar-plan/cambiar-plan.com
 import { RegistrarHojaComponent } from './components/registrar-hoja/registrar-hoja.component';
 import { ListaNominaComponent } from './components/lista-nomina/lista-nomina.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
-import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 import { CuponComponent } from './components/cupon/cupon.component';
 import { TarjetaVisaComponent } from './components/tarjeta-visa/tarjeta-visa.component';
 import { CommonModule } from '@angular/common';
@@ -55,7 +54,6 @@ import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.
     RegistrarHojaComponent,
     ListaNominaComponent,
     CrearUsuarioComponent,
-    CrearCuentaComponent,
     CuponComponent,
     TarjetaVisaComponent,
     CausalesDespidoComponent,
