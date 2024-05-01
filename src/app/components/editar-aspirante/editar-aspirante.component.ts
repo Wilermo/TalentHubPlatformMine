@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AspiranteService } from 'src/app/shared/model/service/aspirante.service';
+import { CandidateService } from 'src/app/shared/model/service/candidate.service';
 import { BehaviorSubject } from 'rxjs';
 import { ComunicacionAspService } from 'src/app/shared/model/service/comunicacion-asp.service';
 
@@ -19,7 +19,7 @@ export class EditarAspiranteComponent {
   editForm!: FormGroup;
   closemessage = 'closed using directive'
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<EditarAspiranteComponent>, private formBuilder: FormBuilder,
-    private service: AspiranteService, private aspiranteEditService:ComunicacionAspService) {
+    private service: CandidateService, private aspiranteEditService:ComunicacionAspService) {
 
   }
   ngOnInit(): void {
@@ -56,7 +56,7 @@ export class EditarAspiranteComponent {
       const newemergencyContact = this.editForm.get('emergencyContact')?.value || this.currentAspirante.emergencyContact;
       console.log('id:', newStatus);
     
-      this.service.editAspirante1(id, newStatus, newEmail, newUniversity, newnameEmergencyContact, newemergencyContact).subscribe(
+      this.service.editCandidate1(id, newStatus, newEmail, newUniversity, newnameEmergencyContact, newemergencyContact).subscribe(
         () => {
           console.log('Aspirante editado exitosamente');
           this.ref.close('Aspirante editado exitosamente');

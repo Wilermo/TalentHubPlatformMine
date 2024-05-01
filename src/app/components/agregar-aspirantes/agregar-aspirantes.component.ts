@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AspiranteService } from 'src/app/shared/model/service/aspirante.service';
-import { aspirante } from 'src/app/shared/model/Entities/aspirante';
-import { ConvocatoriaService } from 'src/app/shared/model/service/convocatoria.service';
-import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
+import { CandidateService } from 'src/app/shared/model/service/candidate.service';
+import { candidate } from 'src/app/shared/model/Entities/candidate';
+import { offerService } from 'src/app/shared/model/service/offer.service';
+import { offer } from 'src/app/shared/model/Entities/offer';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-agregar-aspirantes',
   templateUrl: './agregar-aspirantes.component.html',
@@ -12,58 +13,56 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AgregarAspirantesComponent {
   estados = ['Inicial'];
-  ofertas: string[] = [];
+  ofertas: offer[] = [];
 
-  constructor(private builder: FormBuilder, private aspiranteService: AspiranteService,
-  private convocatoriaService: ConvocatoriaService,private snackBar: MatSnackBar) {}
+  constructor(
+    private builder: FormBuilder,
+    private aspiranteService: CandidateService,
+    private convocatoriaService: offerService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.customerform.setValue({
-      identification: '', 
       firstname: 'MeVale',
       surname: 'Monda',
-      email: 'aaaaaaa@gmail.com',
-      university: 'Jave',
-      offer: 'sistemas',
+      phoneNumber: 'aaaaaaa@gmail.com',
+      offer: '', // No necesitamos establecer un valor aquí
       status: 'Inicial',
-      emergencyContact: 'add1',
-      nameEmergencyContact: 'add1'
     });
     this.loadOfertas();
   }
 
   customerform = this.builder.group({
-    identification: this.builder.control('', Validators.required),
-    firstname: this.builder.control('', Validators.required),
-    surname: this.builder.control('', Validators.required),
-    email: this.builder.control('', Validators.compose([Validators.required, Validators.email])),
-    university: this.builder.control('', Validators.required),
-    offer: this.builder.control('', Validators.required),
-    status: this.builder.control('', Validators.required),
-    emergencyContact: this.builder.control('', Validators.required),
-    nameEmergencyContact: this.builder.control('', Validators.required),
+    firstname: ['', Validators.required],
+    surname: ['', Validators.required],
+    phoneNumber: ['', Validators.required],
+    offer: ['', Validators.required],
+    status: ['', Validators.required],
   });
 
   SaveCustomer() {
     if (this.customerform.valid) {
-      const aspiranteData: aspirante = {
-        identification: this.customerform.value.identification || '', 
-        firstname: this.customerform.value.firstname || '',
+      console.log('Valor de offer antes de convertir a número:', this.customerform.value.offer);
+      const offerId = Number(this.customerform.value.offer);
+      console.log('Valor de offer después de convertir a número:', offerId);
+  
+      const aspiranteData: candidate = {
+        name: this.customerform.value.firstname || '',
         surname: this.customerform.value.surname || '',
-        email: this.customerform.value.email || '',
-        university: this.customerform.value.university || '',
-        offer: this.customerform.value.offer || '',
+        phoneNumber: this.customerform.value.phoneNumber || '',
+        offer_id: offerId || 0,
         status: this.customerform.value.status || '',
-        emergencyContact: this.customerform.value.emergencyContact || '',
-        nameEmergencyContact: this.customerform.value.nameEmergencyContact || '',
       };
-      this.aspiranteService.agregarAspirante(aspiranteData).subscribe(
+  
+      console.log('Datos del aspirante:', aspiranteData); // Para verificar que los datos sean correctos
+  
+      this.aspiranteService.agregarCandidate(aspiranteData).subscribe(
         response => {
           console.log('Aspirante agregado correctamente:', response);
           this.showSuccessMessage();
         },
         error => {
-          
           console.error('Error al agregar aspirante:', error);
         }
       );
@@ -71,25 +70,27 @@ export class AgregarAspirantesComponent {
       console.log('Formulario inválido');
     }
   }
+  
 
   clearform() {
     this.customerform.reset();
   }
+
   loadOfertas(): void {
-    this.convocatoriaService.getConvocatorias().subscribe(
-      (convocatorias: convocatoria[]) => {
-        // Mapeamos las convocatorias para obtener solo los títulos de las ofertas
-        this.ofertas = convocatorias.map(convocatoria => convocatoria.tittleOffer);
+    this.convocatoriaService.getoffers().subscribe(
+      (convocatorias: offer[]) => {
+        this.ofertas = convocatorias;
       },
       error => {
         console.error('Error al cargar las ofertas:', error);
       }
     );
   }
+
   showSuccessMessage() {
     this.snackBar.open('La convocatoria se agregó con éxito', 'Cerrar', {
-      duration: 3000, 
-      verticalPosition: 'top' 
+      duration: 3000,
+      verticalPosition: 'top'
     });
   }
 }

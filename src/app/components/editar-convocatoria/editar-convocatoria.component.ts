@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ConvocatoriaService } from 'src/app/shared/model/service/convocatoria.service';
+import { offerService } from 'src/app/shared/model/service/offer.service';
 import { BehaviorSubject } from 'rxjs';
 import { ComunicacionAspService } from 'src/app/shared/model/service/comunicacion-asp.service';
 
@@ -18,7 +18,7 @@ export class EditarConvocatoriaComponent {
   editForm!: FormGroup;
   closemessage = 'closed using directive'
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<EditarConvocatoriaComponent>, private formBuilder: FormBuilder,
-    private service: ConvocatoriaService, private aspiranteEditService:ComunicacionAspService) {
+    private service: offerService, private aspiranteEditService:ComunicacionAspService) {
 
   }
   ngOnInit(): void {
@@ -54,7 +54,7 @@ export class EditarConvocatoriaComponent {
       const newRequirements = this.editForm.get('requirements')?.value || this.currentConvocatoria.requirements;
       console.log('id:', newStatus);
     
-      this.service.editConvocatoria1(id, newStatus, newtittleOffer, newDespcription, newRequirements).subscribe(
+      this.service.editoffer1(id, newStatus, newtittleOffer, newDespcription, newRequirements).subscribe(
         () => {
           console.log('convocatoria editado exitosamente');
           this.ref.close('convocatoria editado exitosamente');

@@ -15,21 +15,12 @@
                     <mat-label>Apellido</mat-label>
                     <input matInput formControlName="surname">
                 </mat-form-field>
-                <mat-form-field class="mat-50">
-                    <mat-label>Email</mat-label>
-                    <input matInput formControlName="email">
-                </mat-form-field>
-        
-                <mat-form-field>
-                    <mat-label>Universidad</mat-label>
-                    <input matInput formControlName="university">
-                </mat-form-field>
-        
+    
                 <mat-form-field class="mat-50">
                     <mat-label>Convocatoria</mat-label>
                     <!-- <input matInput> -->
                     <mat-select formControlName="offer">
-                        <mat-option [value]="item" *ngFor="let item of ofertas">{{item}}</mat-option>
+                        <mat-option [value]="item.id" *ngFor="let item of ofertas">{{item.tittleOffer}}</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field class="mat-50">
@@ -40,14 +31,7 @@
                     </mat-select>
                 </mat-form-field>
         
-                <mat-form-field class="mat-50">
-                    <mat-label>Nombre contacto de emergencia</mat-label>
-                    <input matInput formControlName="nameEmergencyContact">
-                </mat-form-field>
-                <mat-form-field class="mat-50">
-                    <mat-label>Número de contacto de emergencia</mat-label>
-                    <input matInput formControlName="emergencyContact">
-                </mat-form-field>
+               
                 
         
         
