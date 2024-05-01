@@ -14,12 +14,12 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   createUser(user: User, role: string, token: string): Observable<User> {
-    const url = `${environment.authURL}/${role}`;
+    const url = `${environment.authURL}/${role}/talentsoft`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.post<any>(url, user, { headers, responseType: 'text' as 'json' }); 
+    return this.http.post<any>(url, user, { headers, responseType: 'text' as 'json' });
   }
 }
