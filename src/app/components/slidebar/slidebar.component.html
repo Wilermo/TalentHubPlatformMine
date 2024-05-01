@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar</title>
-    
+
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                     </a>
                     <ul id="admin" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Gestionar Empresa</a>
+                            <a [routerLink]="'/editar-empresa'" class="sidebar-link">Gestionar Empresa</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="#" class="sidebar-link">Gestionar Suscripción</a>
@@ -47,7 +47,7 @@
                     </a>
                     <ul id="hire" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a [routerLink]="'/convocatoria'"  class="sidebar-link">Convocatorias</a>
+                            <a [routerLink]="'/convocatoria'" class="sidebar-link">Convocatorias</a>
                         </li>
                         <li class="sidebar-item">
                             <a [routerLink]="'/aspirante'" class="sidebar-link">Aspirantes</a>
@@ -62,10 +62,10 @@
                     </a>
                     <ul id="fire" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Causales de Despido</a>
+                            <a [routerLink]="'/causales-despido'" class="sidebar-link">Causales de Despido</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Procesos de Salida</a>
+                            <a [routerLink]="'/progreso-salida'" class="sidebar-link">Procesos de Salida</a>
                         </li>
                     </ul>
                 </li>
@@ -127,7 +127,8 @@
                     <span>Perfil</span>
                 </a>
                 <a href="#" class="sidebar-link">
-                    <i class="bi bi-box-arrow-left" style="font-size: 1.5rem; color: #292C32;" (click)="logout()" routerLink="/login"></i>
+                    <i class="bi bi-box-arrow-left" style="font-size: 1.5rem; color: #292C32;" (click)="logout()"
+                        routerLink="/login"></i>
                     <span>Cerrar sesión</span>
                 </a>
             </div>
