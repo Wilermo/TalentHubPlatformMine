@@ -1,15 +1,11 @@
 <h1 mat-dialog-title>Detalles del Aspirante</h1>
 <img src="./assets/aspirante.png" alt="">
 <div mat-dialog-content *ngIf="data && data.aspirante">
-  <p><strong>Cédula:</strong> {{ data.aspirante.identification }}</p>
-  <p><strong>Nombre:</strong> {{ data.aspirante.firstname }}</p>
-  <p><strong>Apellido:</strong> {{ data.aspirante.surname }}</p>
-  <p><strong>Email:</strong> {{ data.aspirante.email }}</p>
-  <p><strong>Oferta:</strong> {{ data.aspirante.offer }}</p>
+  <p><strong>Cédula:</strong> {{ data.aspirante.name }}</p>
+  <p><strong>Nombre:</strong> {{ data.aspirante.surname }}</p>
+  <p><strong>Apellido:</strong> {{ data.aspirante.phoneNumber }}</p>
+  <p><strong>Oferta:</strong> {{ data.aspirante.offer_id }}</p>
   <p><strong>Estado:</strong> {{ data.aspirante.status }}</p>
-  <p><strong>Universidad:</strong> {{ data.aspirante.university }}</p>
-  <p><strong>Nombre contacto de Emergencia:</strong> {{ data.aspirante.nameEmergencyContact }}</p>
-  <p><strong>Contacto de Emergencia:</strong> {{ data.aspirante.emergencyContact }}</p>
 </div>
 <div mat-dialog-actions>
   <button (click)="closePopup()" color="warn">Close</button>

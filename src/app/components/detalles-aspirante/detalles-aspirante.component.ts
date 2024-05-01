@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { AspiranteService } from 'src/app/shared/model/service/aspirante.service'; // Importa el servicio de aspirante si no lo has hecho aún
-import { aspirante } from 'src/app/shared/model/Entities/aspirante'; // Importa el modelo de aspirante si no lo has hecho aún
+import { CandidateService } from 'src/app/shared/model/service/candidate.service'; // Importa el servicio de aspirante si no lo has hecho aún
+import { candidate } from 'src/app/shared/model/Entities/candidate'; // Importa el modelo de aspirante si no lo has hecho aún
 
 @Component({
   selector: 'app-detalles-aspirante',
@@ -10,11 +10,11 @@ import { aspirante } from 'src/app/shared/model/Entities/aspirante'; // Importa 
   styleUrls: ['./detalles-aspirante.component.css']
 })
 export class DetallesAspiranteComponent implements OnInit {
-  aspirante: aspirante | null = null;
+  aspirante: candidate | null = null;
   aspiranteId: number | null = null;
 
-  constructor(private route: ActivatedRoute, private aspiranteService: AspiranteService,
-    @Inject(MAT_DIALOG_DATA) public data: { aspirante: aspirante }, private ref:MatDialogRef<DetallesAspiranteComponent>) {}
+  constructor(private route: ActivatedRoute, private CandidateService: CandidateService,
+    @Inject(MAT_DIALOG_DATA) public data: { aspirante: candidate }, private ref:MatDialogRef<DetallesAspiranteComponent>) {}
 
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -28,8 +28,8 @@ export class DetallesAspiranteComponent implements OnInit {
   }
 
   obtenerDetallesAspirante(id: number): void {
-    this.aspiranteService.getAspirante(id).subscribe(
-      (aspirante: aspirante) => {
+    this.CandidateService.getCandidate(id).subscribe(
+      (aspirante: candidate) => {
         this.aspirante = aspirante;
         console.log('Detalles del aspirante:', this.aspirante);
         // Aquí puedes manejar los detalles del aspirante

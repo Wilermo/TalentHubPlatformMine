@@ -1,8 +1,8 @@
 import { Component , Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { ConvocatoriaService } from 'src/app/shared/model/service/convocatoria.service'; // Importa el servicio de aspirante si no lo has hecho aún
-import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
+import { offerService } from 'src/app/shared/model/service/offer.service'; // Importa el servicio de aspirante si no lo has hecho aún
+import { offer } from 'src/app/shared/model/Entities/offer';
 
 @Component({
   selector: 'app-detalles-convocatoria',
@@ -10,11 +10,11 @@ import { convocatoria } from 'src/app/shared/model/Entities/convocatoria';
   styleUrl: './detalles-convocatoria.component.css'
 })
 export class DetallesConvocatoriaComponent implements OnInit {
-  convocatoria: convocatoria| null = null;
+  convocatoria: offer| null = null;
   convocatoriaId: number | null = null;
 
-  constructor(private route: ActivatedRoute, private convocatoriaService: ConvocatoriaService,
-    @Inject(MAT_DIALOG_DATA) public data: { convocatoria: convocatoria }, private ref:MatDialogRef<DetallesConvocatoriaComponent>) {}
+  constructor(private route: ActivatedRoute, private convocatoriaService: offerService,
+    @Inject(MAT_DIALOG_DATA) public data: { convocatoria: offer }, private ref:MatDialogRef<DetallesConvocatoriaComponent>) {}
 
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -28,11 +28,10 @@ export class DetallesConvocatoriaComponent implements OnInit {
   }
 
   obtenerDetallesAspirante(id: number): void {
-    this.convocatoriaService.getConvocatoria(id).subscribe(
-      (convocatoria: convocatoria) => {
+    this.convocatoriaService.getoffer(id).subscribe(
+      (convocatoria: offer) => {
         this.convocatoria = convocatoria;
         console.log('Detalles de la convocatoria:', this.convocatoria);
-        // Aquí puedes manejar los detalles del aspirante
       },
       error => {
         console.error('Error al obtener detalles del aspirante:', error);

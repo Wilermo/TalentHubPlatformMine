@@ -24,7 +24,6 @@ import { CausalesDespidoComponent } from './components/causales-despido/causales
 import { ProgresoSalidaComponent } from './components/progreso-salida/progreso-salida.component';
 import { EditarEmpresaComponent } from './components/editar-empresa/editar-empresa.component';
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
-import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AgregarAspirantesComponent } from './components/agregar-aspirantes/agregar-aspirantes.component';
 import { MaterialModule } from './material.module';
@@ -39,6 +38,9 @@ import { AgregarConvocatoriaComponent } from './components/agregar-convocatoria/
 import { DetallesConvocatoriaComponent } from './components/detalles-convocatoria/detalles-convocatoria.component';
 import { EditarConvocatoriaComponent } from './components/editar-convocatoria/editar-convocatoria.component';
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
+import { DateFormatPipe } from 'src/app/date-format.pipe';
+import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
+import { AspirantesComponent } from './components/aspirantes/aspirantes.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,9 @@ import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.
     EditarConvocatoriaComponent,
     WorkingComponent,
     EditarPerfilComponent,
+    ConvocatoriaComponent,
+    DateFormatPipe,
+    AspirantesComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +88,8 @@ import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.
     MaterialModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    DateFormatPipe
   ],
   bootstrap: [AppComponent]
 })
