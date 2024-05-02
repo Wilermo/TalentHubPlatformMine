@@ -7,8 +7,7 @@ import { candidate } from '../Entities/candidate';
   providedIn: 'root',
 })
 export class CandidateService {
-  //private apiUrl = 'https://662dcbbda7dda1fa378b4cfc.mockapi.io/create-aspirantes/candidate';
-  private apiUrl = 'https://localhost:7275/Candidate';
+  private apiUrl = 'https://662dcbbda7dda1fa378b4cfc.mockapi.io/create-aspirantes/candidate';
 
 
   constructor(private http: HttpClient) { }
@@ -16,7 +15,6 @@ export class CandidateService {
 
 
   getCandidates(): Observable<candidate[]> {
-    const url = `${this.apiUrl}/obtener-aspirantes`;
     return this.http.get<candidate[]>(this.apiUrl);
   }
   editCandidate(id: number, status: string): Observable<any> {
